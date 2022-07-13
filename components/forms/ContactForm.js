@@ -41,10 +41,10 @@ const ContactForm = () => {
 			<div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="lg:text-center mb-12">
 					<p className="mt-2 text-2xl leading-8 font-extrabold tracking-tight text-primary sm:text-3xl">
-						Contact Us
+						Get in touch
 					</p>
 					<p className="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
-						We will reach out to you soon.
+						I will reach out to you soon.
 					</p>
 				</div>
 				<div className="text-center">
@@ -80,7 +80,7 @@ const ContactForm = () => {
 							value={email}
 							onChange={handleChange}
 							className="text-base rounded-lg  block w-full p-2.5 bg-gray-50 border border-gray-600 text-primary  placeholder-primary"
-							placeholder="name@flowbite.com"
+							placeholder="Enter your email here"
 							required
 						/>
 					</div>

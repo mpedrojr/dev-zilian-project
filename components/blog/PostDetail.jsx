@@ -64,6 +64,7 @@ const PostDetail = ({ post }) => {
 	return (
 		<>
 			<div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8 mt-8'>
+				<h1 className='mb-8 text-xl lg:text-2xl font-semibold'>{post.title}</h1>
 				<div className='relative overflow-hidden shadow-md mb-6'>
 					<img
 						src={post.featuredImage.url}
@@ -79,7 +80,16 @@ const PostDetail = ({ post }) => {
 					</p>
 				</div>
 				<div className='px-4 lg:px-0 mt-4'>
-					<div className='flex items-center justify-center mb-8 w-full'>
+					<div className='mb-10'>
+					{post.content.raw.children.map((typeObj, index) => {
+						const children = typeObj.children.map((item, itemindex) =>
+							getContentFragment(itemindex, item.text, item)
+						);
+
+						return getContentFragment(index, children, typeObj, typeObj.type);
+					})}
+					</div>
+					<div className='flex items-center justify-center border-t border-gray-200 pt-10 mb-2 w-full'>
 						<div className='flex mr-8 items-center justify-center'>
 							<img
 								alt={post.author.name}
@@ -102,16 +112,6 @@ const PostDetail = ({ post }) => {
 							</span>
 						</div>
 					</div>
-					<h1 className='mb-8 text-xl lg:text-2xl font-semibold'>
-						{post.title}
-					</h1>
-					{post.content.raw.children.map((typeObj, index) => {
-						const children = typeObj.children.map((item, itemindex) =>
-							getContentFragment(itemindex, item.text, item)
-						);
-
-						return getContentFragment(index, children, typeObj, typeObj.type);
-					})}
 				</div>
 			</div>
 		</>

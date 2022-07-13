@@ -1,26 +1,40 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWind, faFileCode } from '@fortawesome/free-solid-svg-icons';
+import { faReact, faJsSquare, faHtml5, faCss3 } from '@fortawesome/free-brands-svg-icons';
+
 
 export const feature = [
 	{
-		name: "Mobile First",
+		name: 'React',
 		description:
-			"Your application will be created for mobile phones, tablets and optimized for desktops.",
-		icon: <FontAwesomeIcon icon={faBars} />,
+			"The best JavaScript framework/library out there. It's a lot of fun to use.",
+		icon: <FontAwesomeIcon icon={faReact} />,
 	},
 	{
-		name: "High Speed Applications",
-		description: "We use the most advanced technologies to boots speed and performance.",
-		icon: <FontAwesomeIcon icon={faBars} />,
+		name: 'JavaScript',
+		description: 'The best programming language for web development.',
+		icon: <FontAwesomeIcon icon={faJsSquare} />,
 	},
 	{
-		name: "SEO Optimization",
-		description: "Optimization for a excellent connection with Google search engine.",
-		icon: <FontAwesomeIcon icon={faBars} />,
+		name: 'HTML',
+		description: 'The best markup language for web development.',
+		icon: <FontAwesomeIcon icon={faHtml5} />,
 	},
 	{
-		name: "We Speak Your Language",
-		description: "We communicate in a way that you will understand every step of the process.",
-		icon: <FontAwesomeIcon icon={faBars} />,
+		name: 'CSS',
+		description: 'The best styling language for web development.',
+		icon: <FontAwesomeIcon icon={faCss3} />,
+	},
+	{
+		name: 'Tailwind CSS',
+		description: 'The best CSS Framework for Web Development.',
+		icon: <FontAwesomeIcon icon={faWind}  />,
+	},
+	{
+		name: 'Headless CMS',
+		description:
+			'Best way to build user friendly content management.',
+		icon: <FontAwesomeIcon icon={faFileCode} />,
 	},
 ];

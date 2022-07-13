@@ -7,51 +7,73 @@ import { format } from 'date-fns';
 const PostCardMain = ({ post }) => {
 	return (
 		<>
-			<div className='lg:h-[44rem] bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8 mt-8'>
-				<div className='relative overflow-hidden shadow-md pb-80 mb-6'>
-					<img
-						src={post.featuredImage.url}
-						alt={post.title}
-						className='object-top absolute h-80 w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg'
-					/>
-				</div>
-
-				<h1 className='transition duration-700 text-center mb-8 cursor-pointer hover:text-pink-600 text-md lg:text-xl font-semibold'>
-					<Link href={`/post/${post.slug}`}>{post.title}</Link>
-				</h1>
-				<div className='flex items-center justify-center mb-8 w-full'>
-					<div className='flex mr-8 items-center justify-center'>
+			<div className=' dark:text-gray-50 mt-10 lg:mt-0'>
+				<div className='container grid grid-cols-12 mx-auto '>
+					<div className='bg-no-repeat bg-cover col-span-full lg:col-span-4'>
 						<img
-							alt={post.author.name}
-							height='30px'
-							width='30px'
-							className='align-middle justify-center rounded-full'
-							src={post.author.photo.url}
+							src={post.featuredImage.url}
+							alt={post.title}
+							className='w-full h-full object-cover rounded-xl'
 						/>
-						<p className='inline align-middle text-gray-700 ml-2 font-medium text-lg'>
-							{post.author.name}
-						</p>
 					</div>
-					<div className='font-medium text-gray-700 '>
-						<span className='inline mr-2'>
-							<FontAwesomeIcon icon={faCalendar} />
-						</span>
-						<span className='inline align-middle'>
-							{format(new Date(post.createdAt), 'MM/dd/yyyy')}
-						</span>
+					<div className='flex flex-col p-1 col-span-full row-span-full lg:col-span-8 lg:p-10'>
+						<div className='flex justify-start'>
+							<span className='px-3 py-1 mb-2 text-xs rounded-full dark:bg-primary dark:text-gray-900'>
+								{post.categories.map((category, i) => (
+									<h1 className='text-white' key={i}>
+										{category.name}
+									</h1>
+								))}
+							</span>
+						</div>
+						<h1 className='text-xl font-semibold text-black'>
+							<Link href={`/post/${post.slug}`}>{post.title}</Link>
+						</h1>
+						<p className='flex-1 pt-2 text-black'>{post.excerpt}</p>
+						<Link href={`/post/${post.slug}`}>
+							<a
+								rel='noopener noreferrer'
+								href='#'
+								className='inline-flex items-center pt-2 pb-6 space-x-2 text-sm text-black'>
+								<span>Read more</span>
+								<svg
+									xmlns='http://www.w3.org/2000/svg'
+									viewBox='0 0 20 20'
+									fill='currentColor'
+									className='w-4 h-4'>
+									<path
+										fillRule='evenodd'
+										d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
+										clipRule='evenodd'></path>
+								</svg>
+							</a>
+						</Link>
+						<div className='flex items-center justify-between pt-2'>
+							<div className='flex space-x-2'>
+								<img
+									alt={post.author.name}
+									height='30px'
+									width='30px'
+									className='align-middle justify-center rounded-full'
+									src={post.author.photo.url}
+								/>
+								<span className='self-center text-sm text-black'>
+									{post.author.name}
+								</span>
+							</div>
+							<span className='text-xs'>
+								<span className='inline mr-2 text-black'>
+									<FontAwesomeIcon icon={faCalendar} />
+								</span>
+								<span className='inline align-middle text-black'>
+									{format(new Date(post.createdAt), 'MM/dd/yyyy')}
+								</span>
+							</span>
+						</div>
 					</div>
-				</div>
-				<p className='text-center text-lg text-gray-700 font-normal px-6 lg:px-4 mb-8'>
-					{post.excerpt}
-				</p>
-				<div className='text-center'>
-					<Link href={`/post/${post.slug}`}>
-						<span className='transition duration-500 ease transform hover:-translate-y-1 inline-block bg-amber-700 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer'>
-							Continue Reading
-						</span>
-					</Link>
 				</div>
 			</div>
+			<div className='mt-10  lg:mt-0 border-b border-gray-300'></div>
 		</>
 	);
 };

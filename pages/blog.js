@@ -30,7 +30,7 @@ const BlogHome = ({ posts }) => {
 					</div>
 				</div>
 				<div className='lg:col-span-9'>
-					<div className='grid grid-cols-2 gap-6 -pb-12'>
+					<div className='grid grid-cols-1 gap-6'>
 						{posts.map((post, index) => (
 							<PostCardMain key={index} post={post.node} />
 						))}

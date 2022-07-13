@@ -6,16 +6,14 @@ const HeroHome = () => {
 					<main className='mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
 						<div className='sm:text-center lg:text-left xl:ml-2 2xl:ml-20'>
 							<h1 className='text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl'>
-								<span className='block xl:inline'>Mobile first</span>{' '}
-								<span className='block text-primary xl:inline'>Websites</span>
+								<span className='block xl:inline'>The devzilian</span>{' '}
+								<span className='block text-primary xl:inline'>Project</span>
 							</h1>
 							<p className='mt-3 text-base text-gray-900 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0'>
-								High performance applications compatible with all mobile phones
-								and tablets.
+								Welcome to my portfolio and blog.
 							</p>
 							<p className='mt-2 text-base text-gray-500 sm:mt-2 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-2 md:text-xl lg:mx-0'>
-								Click on the button below, fill-out the contact form so we will
-								call you back.
+								Let&apos;s talk about Web Development.
 							</p>
 							<div className='mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start'>
 								<div className='rounded-md shadow'>
