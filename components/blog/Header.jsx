@@ -25,7 +25,7 @@ const Header = () => {
 		<nav className='px-6 py-3 mt-2  rounded-lg'>
 			<div className='container lg:flex flex-wrap items-center  justify-between mx-auto'>
 				<Link href='/blog' className=' text-primary'>
-					<a className='flex self-center text-center justify-center mt-4 mb-4 text-2xl text-primary font-semibold whitespace-nowrap '>
+					<a className='flex self-center text-center justify-center mt-4 mb-4 text-3xl lg:text-4xl text-primary font-bold whitespace-nowrap '>
 						Blog
 					</a>
 				</Link>

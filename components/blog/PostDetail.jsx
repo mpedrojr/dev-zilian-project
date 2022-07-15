@@ -64,7 +64,21 @@ const PostDetail = ({ post }) => {
 	return (
 		<>
 			<div className='bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8 mt-8'>
-				<h1 className='mb-8 text-xl lg:text-2xl font-semibold'>{post.title}</h1>
+				
+				<div className='px-2 md:py-2 mb-0 w-full flex justify-start rounded-lg'>
+					<span className='px-0 py-1 mb-0 text-sm rounded-full dark:text-gray-900'>
+						{post.categories.map((category, i) => (
+							<h1 className='text-primary font-semibold' key={i}>
+								{category.name}
+							</h1>
+						))}
+					</span>
+				</div>
+
+				<h1 className='px-2 pt-1 mb-4 text-lg lg:text-3xl font-bold'>
+					{post.title}
+				</h1>
+
 				<div className='relative overflow-hidden shadow-md mb-6'>
 					<img
 						src={post.featuredImage.url}
@@ -72,22 +86,16 @@ const PostDetail = ({ post }) => {
 						className='object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg'
 					/>
 				</div>
-				<div className='py-1 md:py-2 px-8 w-full flex justify-center rounded-lg'>
-					<p className='text-xl text-amber-900 font-semibold tracking-wide'>
-						{post.categories.map((category, i) => (
-							<h1 key={i}>{category.name}</h1>
-						))}
-					</p>
-				</div>
+
 				<div className='px-4 lg:px-0 mt-4'>
 					<div className='mb-10'>
-					{post.content.raw.children.map((typeObj, index) => {
-						const children = typeObj.children.map((item, itemindex) =>
-							getContentFragment(itemindex, item.text, item)
-						);
+						{post.content.raw.children.map((typeObj, index) => {
+							const children = typeObj.children.map((item, itemindex) =>
+								getContentFragment(itemindex, item.text, item)
+							);
 
-						return getContentFragment(index, children, typeObj, typeObj.type);
-					})}
+							return getContentFragment(index, children, typeObj, typeObj.type);
+						})}
 					</div>
 					<div className='flex items-center justify-center border-t border-gray-200 pt-10 mb-2 w-full'>
 						<div className='flex mr-8 items-center justify-center'>
