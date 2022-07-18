@@ -37,7 +37,7 @@ const ContactForm = () => {
 	};
 
 	return (
-		<div className="py-12 my-12 bg-white">
+		<div className="pt-4 mt-4 pb-8 mb-8 bg-white">
 			<div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="lg:text-center mb-12">
 					<p className="mt-2 text-2xl leading-8 font-extrabold tracking-tight text-primary sm:text-3xl">

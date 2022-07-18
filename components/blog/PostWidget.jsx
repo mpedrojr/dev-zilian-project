@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { format } from 'date-fns';
 
-import { getRecentPosts, getSimilarPosts } from '../../services';
+import { getSimilarPosts, getFeaturedPosts } from '../../services';
 
 const PostWidget = ({ categories, slug }) => {
 	const [relatedPosts, setRelatedPosts] = useState([]);
@@ -13,7 +13,7 @@ const PostWidget = ({ categories, slug }) => {
 				setRelatedPosts(result);
 			});
 		} else {
-			getRecentPosts().then((result) => {
+			getFeaturedPosts().then((result) => {
 				setRelatedPosts(result);
 			});
 		}
@@ -23,7 +23,7 @@ const PostWidget = ({ categories, slug }) => {
 		<>
 			<div className=' shadow-lg rounded-lg p-8 pb-12 mb-8 lg:mt-0'>
 				<h3 className='text-xl text-primary mb-8 font-semibold border-b pb-4'>
-					{slug ? 'Related Posts' : 'Recent Posts'}
+					{slug ? 'Related Posts' : 'Featured Posts'}
 				</h3>
 				{relatedPosts.map((post, index) => (
 					<div key={index} className='flex items-center w-full mb-4'>

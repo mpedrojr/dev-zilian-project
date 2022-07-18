@@ -1,8 +1,8 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWind, faFileCode } from '@fortawesome/free-solid-svg-icons';
+import { faFileCode } from '@fortawesome/free-solid-svg-icons';
 import { faReact, faJsSquare, faHtml5, faCss3 } from '@fortawesome/free-brands-svg-icons';
-
+import TailwindLogo from '../images/tailwind-logo-white.svg'
 
 export const feature = [
 	{
@@ -29,7 +29,7 @@ export const feature = [
 	{
 		name: 'Tailwind CSS',
 		description: 'The best CSS Framework for Web Development.',
-		icon: <FontAwesomeIcon icon={faWind}  />,
+		icon: <TailwindLogo />,
 	},
 	{
 		name: 'Headless CMS',

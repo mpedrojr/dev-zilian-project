@@ -3,20 +3,24 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-regular-svg-icons';
 import { format } from 'date-fns';
+import Image from 'next/image';
+
 
 const PostCardMain = ({ post }) => {
 	return (
 		<>
-			<div className=' dark:text-gray-50 mt-10 lg:mt-0'>
-				<div className='container grid grid-cols-12 mx-auto '>
-					<div className='bg-no-repeat bg-cover col-span-full lg:col-span-4'>
-						<img
+			<div className='container dark:text-gray-50 mt-10 lg:mt-0'>
+				<div className='lg:grid grid-cols-12 mx-auto '>
+					<div className='flex lg:block lg:w-auto lg:h-auto lg:pt-14  rounded-lg mb-4 lg:mb-0 order-first lg:order-last justify-center row-span-full col-span-full lg:col-span-3'>
+						<Image
 							src={post.featuredImage.url}
 							alt={post.title}
-							className='w-full h-full object-cover rounded-xl'
+							height={350}
+							width={700}
+							className='rounded-lg'
 						/>
 					</div>
-					<div className='flex flex-col p-1 col-span-full row-span-full lg:col-span-8 lg:p-10'>
+					<div className='flex order-last lg:order-first flex-col p-1 col-span-full row-span-full lg:col-span-9 lg:p-10'>
 						<div className='flex justify-start'>
 							<span className='px-3 py-1 mb-2 text-xs rounded-full dark:bg-primary dark:text-gray-900'>
 								{post.categories.map((category, i) => (
@@ -26,10 +30,10 @@ const PostCardMain = ({ post }) => {
 								))}
 							</span>
 						</div>
-						<h1 className='text-xl font-semibold text-black'>
+						<h1 className='text-md lg:text-xl font-semibold text-black'>
 							<Link href={`/post/${post.slug}`}>{post.title}</Link>
 						</h1>
-						<p className='flex-1 pt-2 text-black'>{post.excerpt}</p>
+						<p className='flex-1 pt-2 text-black sm:flex'>{post.excerpt}</p>
 						<Link href={`/post/${post.slug}`}>
 							<a
 								rel='noopener noreferrer'
@@ -48,7 +52,7 @@ const PostCardMain = ({ post }) => {
 								</svg>
 							</a>
 						</Link>
-						<div className='flex items-center justify-between pt-2'>
+						<div className='flex items-center space-x-4 pt-2'>
 							<div className='flex space-x-2'>
 								<img
 									alt={post.author.name}
@@ -62,7 +66,7 @@ const PostCardMain = ({ post }) => {
 								</span>
 							</div>
 							<span className='text-xs'>
-								<span className='inline mr-2 text-black'>
+								<span className='inline mr-1 text-black'>
 									<FontAwesomeIcon icon={faCalendar} />
 								</span>
 								<span className='inline align-middle text-black'>

@@ -61,7 +61,7 @@ const Navbar = () => {
 					<Link href='/'>
 						<a>HOME</a>
 					</Link>
-					<Link href='#'>
+					{/* <Link href='#'>
 						<a>PRODUCTS</a>
 					</Link>
 					<Link href='#'>
@@ -69,7 +69,7 @@ const Navbar = () => {
 					</Link>
 					<Link href='#'>
 						<a>CONTACT</a>
-					</Link>
+					</Link> */}
 					<Link href='/blog'>
 						<a>BLOG</a>
 					</Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
 							<a>HOME</a>
 						</Link>
 					</div>
-					<div
+					{/* <div
 						onClick={handleClick}
 						className='border-b-2 border-b-primary leading-10 w-80 text-center	'>
 						<Link href='/'>
@@ -123,7 +123,7 @@ const Navbar = () => {
 						<Link href='/'>
 							<a>CONTACT</a>
 						</Link>
-					</div>
+					</div> */}
 					<div
 						onClick={handleClick}
 						className='border-b-2 border-b-primary leading-10 w-80 text-center'>
