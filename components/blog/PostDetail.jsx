@@ -100,9 +100,9 @@ const PostDetail = ({ post }) => {
 											<a
 												className='text-blue-800'
 												href={href}
-												rel="noreferrer"
+												
 												target={openInNewTab ? '_blank' : '_self'}
-												rel={rel || 'noopener noreferrer'}
+												rel={'noopener noreferrer'}
 												{...rest}>
 												{children}
 											</a>
