@@ -94,7 +94,7 @@ const PostDetail = ({ post }) => {
 									</pre>
 								),
 
-								a: ({ children, openInNewTab, href, rel, ...rest }) => {
+								a: ({ children, openInNewTab, href, ...rest }) => {
 									if (href.match(/^https?:\/\/|^\/\//i)) {
 										return (
 											<a
