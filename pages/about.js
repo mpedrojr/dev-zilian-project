@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import MyPhoto from '../images/devzilian_me.png';
 import NucampLogo from '../images/nucamplogo.png';
-import styles from '../styles/About.module.css';
 import { front, back } from '../data/bootcampData';
 
 const About = () => {
