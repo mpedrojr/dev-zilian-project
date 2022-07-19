@@ -1,0 +1,25 @@
+.hero {
+  background-color: rgb(14, 34, 60);
+}
+.title {
+  @apply mb-4 text-4xl font-extrabold tracking-tight text-white;
+}
+
+.react {
+  color: rgb(99, 156, 230);
+}
+.reactnative {
+  color: rgb(189, 214, 246);
+}
+.javascript {
+  color: rgb(224, 209, 9);
+}
+.html {
+  color: rgb(226, 101, 24);
+}
+.css {
+  color: rgb(15, 42, 212);
+}
+.tailwind {
+  color: rgb(37, 100, 226);
+}

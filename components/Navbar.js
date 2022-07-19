@@ -10,71 +10,71 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faX } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
-	//! Auth configuration !//
-	// const { currentUser, setCurrentUser } = useContext(UserContext);
-	// // console.log(currentUser);
+  //! Auth configuration !//
+  // const { currentUser, setCurrentUser } = useContext(UserContext);
+  // // console.log(currentUser);
 
-	// const signOutHandler = async () => {
-	// 	await signOutUser();
-	// 	setCurrentUser(null);
-	// };
-	//! Auth configuration !//
+  // const signOutHandler = async () => {
+  // 	await signOutUser();
+  // 	setCurrentUser(null);
+  // };
+  //! Auth configuration !//
 
-	const [nav, setNav] = useState(false);
-	const handleCLick = () => setNav(!nav);
+  const [nav, setNav] = useState(false);
+  const handleCLick = () => setNav(!nav);
 
-	const handleClick = () => {
-		setNav(false);
-	};
+  const handleClick = () => {
+    setNav(false);
+  };
 
-	function handleResize() {
-		if (window.innerWidth > 768) {
-			setNav(false);
-		}
-	}
+  function handleResize() {
+    if (window.innerWidth > 768) {
+      setNav(false);
+    }
+  }
 
-	useEffect(() => {
-		window.addEventListener('resize', handleResize);
-		return () => {
-			window.removeEventListener('resize', handleResize);
-		};
-	}, []);
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-	return (
-		<nav className='w-xl mx-auto p-3 bg-primary'>
-			<div className='flex items-center justify-between ml-4 md:ml-6 md:mr-6'>
-				<div className='md:hidden text-white' onClick={handleCLick}>
-					{!nav ? (
-						<FontAwesomeIcon icon={faBars} />
-					) : (
-						<FontAwesomeIcon icon={faX} />
-					)}
-				</div>
-				<div className='' onClick={() => setNav(false)}>
-					<button>
-						<Link href='/'>
-							<Logo />
-						</Link>
-					</button>
-				</div>
-				<div className='hidden md:mr-28 lg:mr-40 space-x-10 md:flex text-white'>
-					<Link href='/'>
-						<a>HOME</a>
-					</Link>
-					{/* <Link href='#'>
+  return (
+    <nav className='w-xl mx-auto bg-primary p-3'>
+      <div className='ml-4 flex items-center justify-between md:ml-6 md:mr-6'>
+        <div className='text-white md:hidden' onClick={handleCLick}>
+          {!nav ? (
+            <FontAwesomeIcon icon={faBars} />
+          ) : (
+            <FontAwesomeIcon icon={faX} />
+          )}
+        </div>
+        <div className='' onClick={() => setNav(false)}>
+          <button>
+            <Link href='/'>
+              <Logo />
+            </Link>
+          </button>
+        </div>
+        <div className='hidden space-x-10 text-white md:mr-28 md:flex lg:mr-40'>
+          <Link href='/'>
+            <a>HOME</a>
+          </Link>
+          {/* <Link href='#'>
 						<a>PRODUCTS</a>
-					</Link>
-					<Link href='#'>
-						<a>ABOUT</a>
-					</Link>
-					<Link href='#'>
-						<a>CONTACT</a>
 					</Link> */}
-					<Link href='/blog'>
-						<a>BLOG</a>
-					</Link>
-				</div>
-				{/* {currentUser ? (
+          <Link href='about'>
+            <a>ABOUT</a>
+          </Link>
+          <Link href='contact'>
+            <a>CONTACT</a>
+          </Link>
+          <Link href='/blog'>
+            <a>BLOG</a>
+          </Link>
+        </div>
+        {/* {currentUser ? (
 					<button
 						type="button"
 						onClick={signOutHandler}
@@ -88,53 +88,58 @@ const Navbar = () => {
 						</button>
 					</Link>
 				)} */}
-			</div>
-			<div className='md:hidden'>
-				<div
-					className={
-						!nav
-							? 'hidden'
-							: 'absolute z-40 flex flex-col items-center py-8 mt-4 pb-20 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-0 right-0 drop-shadow-md'
-					}>
-					<div
-						onClick={handleClick}
-						className='border-b-2 border-b-primary leading-10 w-80 text-center'>
-						<Link href='/'>
-							<a>HOME</a>
-						</Link>
-					</div>
-					{/* <div
+      </div>
+      <div className='md:hidden'>
+        <div
+          className={
+            !nav
+              ? 'hidden'
+              : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 bg-white py-8 pb-20 font-bold drop-shadow-md sm:w-auto sm:self-center'
+          }
+        >
+          <div
+            onClick={handleClick}
+            className='w-80 border-b-2 border-b-primary text-center leading-10'
+          >
+            <Link href='/'>
+              <a>HOME</a>
+            </Link>
+          </div>
+          {/* <div
 						onClick={handleClick}
 						className='border-b-2 border-b-primary leading-10 w-80 text-center	'>
 						<Link href='/'>
 							<a>PRODUCTS</a>
 						</Link>
-					</div>
-					<div
-						onClick={handleClick}
-						className='border-b-2 border-b-primary leading-10 w-80 text-center'>
-						<Link href='/'>
-							<a>ABOUT</a>
-						</Link>
-					</div>
-					<div
-						onClick={handleClick}
-						className='border-b-2 border-b-primary leading-10 w-80 text-center'>
-						<Link href='/'>
-							<a>CONTACT</a>
-						</Link>
 					</div> */}
-					<div
-						onClick={handleClick}
-						className='border-b-2 border-b-primary leading-10 w-80 text-center'>
-						<Link href='/blog'>
-							<a>BLOG</a>
-						</Link>
-					</div>
-				</div>
-			</div>
-		</nav>
-	);
+          <div
+            onClick={handleClick}
+            className='w-80 border-b-2 border-b-primary text-center leading-10'
+          >
+            <Link href='/about'>
+              <a>ABOUT</a>
+            </Link>
+          </div>
+          <div
+            onClick={handleClick}
+            className='w-80 border-b-2 border-b-primary text-center leading-10'
+          >
+            <Link href='/contact'>
+              <a>CONTACT</a>
+            </Link>
+          </div>
+          <div
+            onClick={handleClick}
+            className='w-80 border-b-2 border-b-primary text-center leading-10'
+          >
+            <Link href='/blog'>
+              <a>BLOG</a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;

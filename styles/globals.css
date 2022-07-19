@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-	html {
-		@apply font-primary;
-	}
+  html {
+    @apply font-primary;
+  }
 }
-
