@@ -5,9 +5,7 @@ import Logo from '../images/logodev-white.svg';
 // import { UserContext } from "../contexts/user.context";
 // import { signOutUser } from "../utils/firebase.utils";
 //! Auth configuration !//
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faX } from '@fortawesome/free-solid-svg-icons';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   //! Auth configuration !//
@@ -44,14 +42,10 @@ const Navbar = () => {
     <nav className='w-xl mx-auto bg-primary p-3'>
       <div className='ml-4 flex items-center justify-between md:ml-6 md:mr-6'>
         <div className='text-white md:hidden' onClick={handleCLick}>
-          {!nav ? (
-            <FontAwesomeIcon icon={faBars} />
-          ) : (
-            <FontAwesomeIcon icon={faX} />
-          )}
+          {!nav ? <FaBars /> : <FaTimes />}
         </div>
         <div className='' onClick={() => setNav(false)}>
-          <button>
+          <button className='ml-28'>
             <Link href='/'>
               <Logo />
             </Link>

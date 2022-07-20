@@ -12,8 +12,12 @@ const Banner = () => {
               <span className='block md:inline'> Blog</span>
             </h2>
             <div className='space-x-2 py-2 text-center lg:py-0'>
-              <span className='text-xl font-normal'>New posts about </span>
-              <span className='text-xl font-bold'>Web Development</span>
+              <span className='block text-lg font-normal lg:text-xl'>
+                New posts about
+              </span>
+              <span className='block text-lg font-bold lg:text-xl'>
+                Web Development
+              </span>
 
               <span className='mt-2 flex justify-center'>
                 <Link href='/blog' alt='Link to the blog home page'>

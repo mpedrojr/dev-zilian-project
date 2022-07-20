@@ -6,7 +6,7 @@ import ContactForm from '../components/forms/ContactForm';
 
 export default function Home() {
   return (
-    <div>
+    <section className='mx-auto bg-slate-100'>
       <Head>
         <title>DevZilian</title>
       </Head>
@@ -14,15 +14,17 @@ export default function Home() {
       <HeroHome />
       <Features />
       <Banner />
-      <div className='mt-16 lg:text-center'>
-        <p className='mt-2 text-2xl font-extrabold leading-8 tracking-tight text-primary sm:text-3xl'>
-          Get in touch
-        </p>
-        <p className='mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto'>
-          I will reach out to you soon.
-        </p>
-      </div>
+      <section className='mx-auto'>
+        <div className='mt-16 justify-center text-center'>
+          <p className='mt-2 text-2xl font-extrabold leading-8 tracking-tight text-primary sm:text-3xl'>
+            Get in touch
+          </p>
+          <p className='mt-4 text-center  text-xl text-gray-500 lg:mx-auto'>
+            I will reach out to you soon.
+          </p>
+        </div>
+      </section>
       <ContactForm />
-    </div>
+    </section>
   );
 }

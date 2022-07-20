@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { feature } from '../../data/featuresData';
+import { feature } from '../../data/home-data';
 
 const Features = () => {
   return (

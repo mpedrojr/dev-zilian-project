@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { FaRegCalendar } from 'react-icons/fa';
+import { BiCalendar } from 'react-icons/bi';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
@@ -67,14 +67,14 @@ const PostCardMain = ({ post }) => {
                   {post.author.name}
                 </span>
               </div>
-              <span className='text-xs'>
-                <span className='mr-1 inline text-black'>
-                  <FontAwesomeIcon icon={faCalendar} />
+              <div className='flex items-center text-xs'>
+                <span className='mr-1 inline align-middle text-black'>
+                  <FaRegCalendar />
                 </span>
                 <span className='inline align-middle text-black'>
                   {format(new Date(post.createdAt), 'MM/dd/yyyy')}
                 </span>
-              </span>
+              </div>
             </div>
           </div>
         </div>

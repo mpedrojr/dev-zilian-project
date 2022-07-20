@@ -18,8 +18,14 @@
   color: rgb(226, 101, 24);
 }
 .css {
-  color: rgb(15, 42, 212);
+  color: rgb(18, 36, 154);
 }
 .tailwind {
-  color: rgb(37, 100, 226);
+  color: rgb(23, 66, 152);
+}
+.node {
+  color: rgb(18, 120, 42);
+}
+.mongo {
+  color: rgb(72, 68, 50);
 }

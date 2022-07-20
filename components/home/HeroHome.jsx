@@ -21,12 +21,12 @@ const HeroHome = () => {
                 </p>
                 <div className='mt-5 flex justify-center sm:mt-8 lg:justify-start'>
                   <div className='rounded-md shadow'>
-                    <a
+                   {/*  <a
                       href='#'
                       className='flex w-fit items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-amber-700 md:py-4 md:px-10 md:text-lg'
                     >
                       Leave a message
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

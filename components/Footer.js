@@ -1,11 +1,6 @@
 import Link from 'next/link';
 import Logo from '../images/logodev-white.svg';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faDiscord,
-  faFacebook,
-  faInstagram,
-} from '@fortawesome/free-brands-svg-icons';
+import { FaDiscord, FaFacebook, FaInstagram } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -24,11 +19,6 @@ const Footer = () => {
               Resources
             </h2>
             <ul className='text-gray-600 dark:text-gray-400'>
-              <li className='mb-4'>
-                <Link href='' className='hover:underline'>
-                  <a className='hover:underline'>Technologies</a>
-                </Link>
-              </li>
               <li>
                 <Link href='/blog' className='hover:underline'>
                   <a className='hover:underline'>Blog</a>
@@ -38,17 +28,23 @@ const Footer = () => {
           </div>
           <div>
             <h2 className='mb-6 text-sm font-semibold uppercase text-gray-900 dark:text-white'>
-              Follow us
+              CONNECT
             </h2>
             <ul className='text-gray-600 dark:text-gray-400'>
               <li className='mb-4'>
-                <Link href='' className='hover:underline '>
+                <Link
+                  href='https://github.com/mpedrojr/dev-zilian-project'
+                  className='hover:underline '
+                >
                   <a className='hover:underline'>Github</a>
                 </Link>
               </li>
               <li>
-                <Link href='' className='hover:underline'>
-                  <a className='hover:underline'>Discord</a>
+                <Link
+                  href='https://www.linkedin.com/in/mpedrocjr/'
+                  className='hover:underline'
+                >
+                  <a className='hover:underline'>Linkedin</a>
                 </Link>
               </li>
             </ul>
@@ -63,18 +59,14 @@ const Footer = () => {
                   <a className='hover:underline'>Home</a>
                 </Link>
               </li>
+
               <li className='mb-4'>
-                <Link href='#'>
-                  <a className='hover:underline'>Technologies</a>
-                </Link>
-              </li>
-              <li className='mb-4'>
-                <Link href='/' className='hover:underline'>
+                <Link href='/about' className='hover:underline'>
                   <a className='hover:underline'>About</a>
                 </Link>
               </li>
               <li className='mb-4'>
-                <Link href='/' className='hover:underline'>
+                <Link href='/contact' className='hover:underline'>
                   <a className='hover:underline'>Contact</a>
                 </Link>
               </li>
@@ -93,7 +85,7 @@ const Footer = () => {
             className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
           >
             <button className='text-2xl text-zinc-400'>
-              <FontAwesomeIcon icon={faDiscord} />
+              <FaDiscord />
             </button>
           </Link>
           <Link
@@ -101,7 +93,7 @@ const Footer = () => {
             className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
           >
             <button className='text-2xl text-zinc-400'>
-              <FontAwesomeIcon icon={faFacebook} />
+              <FaFacebook />
             </button>
           </Link>
           <Link
@@ -109,7 +101,7 @@ const Footer = () => {
             className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
           >
             <button className='text-2xl text-zinc-400'>
-              <FontAwesomeIcon icon={faInstagram} />
+              <FaInstagram />
             </button>
           </Link>
         </div>

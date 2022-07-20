@@ -1,6 +1,5 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { FaRegCalendar } from 'react-icons/fa';
 import { format } from 'date-fns';
 import Link from 'next/link';
 import { RichText } from '@graphcms/rich-text-react-renderer';
@@ -131,9 +130,9 @@ const PostDetail = ({ post }) => {
                 {post.author.name}
               </p>
             </div>
-            <div className='font-medium text-gray-700 '>
-              <span className='mr-2 inline'>
-                <FontAwesomeIcon icon={faCalendar} />
+            <div className='flex items-center font-medium text-gray-700 '>
+              <span className='mr-2 align-middle inline'>
+                <FaRegCalendar />
               </span>
               <span className='inline align-middle'>
                 {format(new Date(post.createdAt), 'MM/dd/yyyy')}

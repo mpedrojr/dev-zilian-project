@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import MyPhoto from '../images/devzilian_me.png';
 import NucampLogo from '../images/nucamplogo.png';
-import { front, back } from '../data/bootcampData';
+import { front, back } from '../data/about-data';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -45,24 +45,6 @@ const About = () => {
                   className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'
                 ></a>
               </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-[#00acee] hover:text-gray-900 dark:hover:text-white'
-                ></a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-gray-900 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white'
-                ></a>
-              </li>
-              <li>
-                <a
-                  href='#'
-                  className='text-[#ea4c89] hover:text-gray-900 dark:hover:text-white'
-                ></a>
-              </li>
             </ul>
           </div>
         </div>
@@ -70,7 +52,7 @@ const About = () => {
 
       {/* Section 2 - Bootcamp */}
 
-      <div className='py-8 text-gray-900'>
+      <div className='py-2 text-gray-900'>
         <div className='container mx-auto'>
           <div className='mx-auto p-4 text-center md:px-10 lg:px-32 xl:max-w-5xl'>
             <h2 className='text-2xl  font-bold leading-none sm:text-4xl'>
@@ -87,7 +69,7 @@ const About = () => {
               was very important to learn to code and to become a web developer.
               See below al the technologies that I leaned during the Bootcamp.
             </p>
-            <div className='mx-auto h-44 w-44'>
+            <div className='mx-auto mt-8 h-18 w-40'>
               <Image
                 className='mx-auto rounded-lg'
                 src={NucampLogo}
