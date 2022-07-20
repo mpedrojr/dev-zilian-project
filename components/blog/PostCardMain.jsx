@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { FaRegCalendar } from 'react-icons/fa';
-import { BiCalendar } from 'react-icons/bi';
 import { format } from 'date-fns';
 import Image from 'next/image';
 
