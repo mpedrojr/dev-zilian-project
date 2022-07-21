@@ -35,7 +35,7 @@ const About = () => {
             </div>
 
             <h3 className='mb-1 text-2xl font-bold tracking-tight text-gray-900 '>
-              <a href='#'>Pedro da C jr.</a>
+              <a href='#'>Pedro da C Jr.</a>
             </h3>
             <p>Web Developer</p>
             <ul className='mt-4 flex justify-center space-x-4'>

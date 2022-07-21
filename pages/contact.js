@@ -12,7 +12,7 @@ const Contact = () => {
           </div>
           <div className='mb-10 flex items-center justify-center sm:mb-20'>
             <h1 className='text-md lg:text-xl text-white'>
-              I will Reach out to you soon.
+              I will reach out to you soon.
             </h1>
           </div>
         </div>
