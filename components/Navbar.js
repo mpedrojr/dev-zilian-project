@@ -51,7 +51,7 @@ const Navbar = () => {
             </Link>
           </button>
         </div>
-        <div className='hidden space-x-10 text-white md:mr-28 md:flex lg:mr-40'>
+        <div className='hidden space-x-10 font-semibold font-secondary text-white md:mr-28 md:flex lg:mr-40'>
           <Link href='/'>
             <a>HOME</a>
           </Link>
@@ -88,7 +88,7 @@ const Navbar = () => {
           className={
             !nav
               ? 'hidden'
-              : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 bg-white py-8 pb-20 font-bold drop-shadow-md sm:w-auto sm:self-center'
+              : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 bg-white py-8 pb-20 font-bold font-secondary drop-shadow-md sm:w-auto sm:self-center'
           }
         >
           <div

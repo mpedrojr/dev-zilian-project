@@ -34,17 +34,19 @@ const Footer = () => {
               <li className='mb-4'>
                 <Link
                   href='https://github.com/mpedrojr/dev-zilian-project'
+                  rel='noopener noreferrer'
                   className='hover:underline '
                 >
-                  <a className='hover:underline'>Github</a>
+                  <a target='_blank' className='hover:underline'>Github</a>
                 </Link>
               </li>
               <li>
                 <Link
                   href='https://www.linkedin.com/in/mpedrocjr/'
+                  rel='noopener noreferrer'
                   className='hover:underline'
                 >
-                  <a className='hover:underline'>Linkedin</a>
+                  <a target='_blank' className='hover:underline'>Linkedin</a>
                 </Link>
               </li>
             </ul>

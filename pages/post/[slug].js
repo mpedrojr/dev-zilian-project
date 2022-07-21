@@ -18,7 +18,7 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className='container mx-auto mb-8 px-4 md:px-6 lg:px-10 xl:px-44'>
+    <div className='container mx-auto mb-8 px-4 md:px-6 lg:px-10 xl:px-28'>
       <Header />
 
       <div className='grid grid-cols-1 gap-8 lg:grid-cols-12'>

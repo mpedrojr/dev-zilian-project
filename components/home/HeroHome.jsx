@@ -8,7 +8,7 @@ const HeroHome = () => {
         <div className='mx-auto max-w-7xl lg:ml-20 xl:ml-48'>
           <div className='relative z-10 pb-8  sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:rounded-lg lg:pb-28 xl:pb-32'>
             <main className='mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28'>
-              <div className='text-center lg:text-left xl:ml-2 2xl:ml-20'>
+              <div className='text-center lg:text-left xl:ml-12 2xl:ml-28'>
                 <h1 className='text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl'>
                   <span className='block'>Devzilian</span>
                   <span className='block text-primary'>Web Dev</span>

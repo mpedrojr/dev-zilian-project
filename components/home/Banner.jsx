@@ -7,11 +7,11 @@ const Banner = () => {
       <div className='container mx-auto px-2 xl:px-44'>
         <div className='rounded-md p-6 py-12 dark:bg-amber-600 xl:px-8'>
           <div className='flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-44'>
-            <h2 className='text-center text-5xl font-bold tracking-tighter'>
+            <h2 className='text-center text-5xl font-bold font-secondary tracking-tighter'>
               <span className='block md:inline'>Visit my </span>
               <span className='block md:inline'> Blog</span>
             </h2>
-            <div className='space-x-2 py-2 text-center lg:py-0'>
+            <div className='space-x-2 py-2 text-center font-secondary lg:py-0'>
               <span className='block text-lg font-normal lg:text-xl'>
                 New posts about
               </span>

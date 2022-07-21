@@ -6,11 +6,20 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      'sm': '640px',
+      // => @media (min-width: 640px) { ... }
+
+      'md': '768px',
+      // => @media (min-width: 768px) { ... }
+
+      'lg': '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      'xl': '1280px',
+      // => @media (min-width: 1280px) { ... }
+
       '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
     },
     extend: {
       colors: {
@@ -18,9 +27,10 @@ module.exports = {
         secondary: '#4a4a48',
       },
       fontFamily: {
-        primary: ['Montserrat', 'sans-serif'],
+        primary: ['Roboto', 'sans-serif'],
+        secondary: ['Open Sans', 'sans-serif'],
         code: ['Source Code Pro', 'monospace'],
-        secondary: ['Lato', 'sans-serif'],
+      
       },
     },
   },
