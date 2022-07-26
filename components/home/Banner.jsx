@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <section className='mx-auto'>
       <div className='container mx-auto px-2 xl:px-44'>
-        <div className='rounded-md p-6 py-12 dark:bg-amber-600 xl:px-8'>
+        <div className='rounded-md p-6 py-12 bg-amber-600 xl:px-8'>
           <div className='flex flex-col items-center lg:flex-row lg:justify-center lg:space-x-44'>
             <h2 className='text-center text-5xl font-bold font-secondary tracking-tighter'>
               <span className='block md:inline'>Visit my </span>
