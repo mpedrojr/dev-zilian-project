@@ -18,31 +18,32 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className='container bg-slate-100 dark:bg-gray-900 mx-auto pb-8 px-4 md:px-6 lg:px-10 xl:px-28'>
-      <Header />
+    <section className='mx-auto bg-slate-100 dark:bg-gray-900 '>
+      <div className='container mx-auto bg-slate-100 px-4 pb-8 dark:bg-gray-900 md:px-6 lg:px-10 xl:px-28'>
+        <Header />
 
-      <div className='grid grid-cols-1 gap-8 lg:grid-cols-12'>
-        <div className='col-span-1 lg:col-span-8'>
-          <PostDetail post={post} />
-          <CommentsForm slug={post.slug} />
-          <Comments slug={post.slug} />
-        </div>
-        <div className='col-span-1 lg:col-span-4'>
-          <div className='relative top-8 lg:sticky'>
-            <PostWidget
-              slug={post.slug}
-              categories={post.categories.map((category) => category.slug)}
-            />
-            <Categories />
+        <div className='grid grid-cols-1 gap-8 lg:grid-cols-12'>
+          <div className='col-span-1 lg:col-span-8'>
+            <PostDetail post={post} />
+            <CommentsForm slug={post.slug} />
+            <Comments slug={post.slug} />
+          </div>
+          <div className='col-span-1 lg:col-span-4'>
+            <div className='relative top-8 lg:sticky'>
+              <PostWidget
+                slug={post.slug}
+                categories={post.categories.map((category) => category.slug)}
+              />
+              <Categories />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default PostDetails;
-
 
 // Fetch data at build time
 export async function getStaticProps({ params }) {

@@ -13,22 +13,24 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <div className='bg-slate-100 dark:bg-gray-900 mx-auto pb-12 px-4 xl:px-24'>
-      <Header />
+    <section className='mx-auto bg-slate-100 dark:bg-gray-900'>
+      <div className='container mx-auto px-4 pb-12 xl:px-28'>
+        <Header />
 
-      <div className='mt-1 grid grid-cols-1 gap-8 lg:grid-cols-12'>
-        <div className='col-span-1 lg:col-span-9'>
-          {posts.map((post, index) => (
-            <PostCardMain key={index} post={post.node} />
-          ))}
-        </div>
-        <div className='col-span-1 lg:col-span-3'>
-          <div className='relative top-8 lg:sticky'>
-            <Categories />
+        <div className='mt-1 grid grid-cols-1 gap-8 lg:grid-cols-12'>
+          <div className='col-span-1 lg:col-span-9'>
+            {posts.map((post, index) => (
+              <PostCardMain key={index} post={post.node} />
+            ))}
+          </div>
+          <div className='col-span-1 lg:col-span-3'>
+            <div className='relative top-8 lg:sticky'>
+              <Categories />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default CategoryPost;

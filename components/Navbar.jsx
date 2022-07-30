@@ -121,7 +121,7 @@ const Navbar = () => {
           className={
             !nav
               ? 'hidden'
-              : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 border-b bg-white py-8 pb-20 font-secondary font-bold text-primary drop-shadow-md dark:border-b-gray-200 dark:bg-primary dark:text-gray-200 sm:w-auto sm:self-center'
+              : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 border-b bg-white py-8 pb-20 font-secondary font-bold text-primary drop-shadow-md dark:border-b-gray-200 dark:bg-gray-900 dark:text-gray-200 sm:w-auto sm:self-center'
           }
         >
           <div

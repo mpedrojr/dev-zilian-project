@@ -156,7 +156,7 @@ export const getCategoryPost = async (slug) => {
 export const getFeaturedPosts = async () => {
   const query = gql`
     query GetCategoryPost() {
-      posts(where: {featuredPost: true}, orderBy: createdAt_DESC, last: 3) {
+      posts(where: {featuredPost: true}, orderBy: createdAt_DESC, first: 3) {
         author {
           name
           photo {

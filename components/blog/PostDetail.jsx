@@ -54,35 +54,35 @@ const PostDetail = ({ post }) => {
                 ol: ({ children }) => <ol>{children}</ol>,
                 li: ({ children }) => <li>{children}</li>,
                 p: ({ children }) => (
-                  <p className='mb-4 text-base leading-relaxed text-gray-900 dark:text-gray-400'>
+                  <p className='mb-4 text-base leading-relaxed text-gray-900 dark:text-gray-300'>
                     {children}
                   </p>
                 ),
                 h1: ({ children }) => (
-                  <h1 className='text-xl leading-loose text-gray-900 dark:text-gray-400'>
+                  <h1 className='text-3xl leading-loose text-gray-900 dark:text-gray-300'>
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className='text-lg font-semibold leading-loose text-gray-900 dark:text-gray-400'>
+                  <h2 className='text-2xl font-bold leading-loose text-gray-900 dark:text-gray-300'>
                     {children}
                   </h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className='text-base font-semibold leading-loose text-gray-900 dark:text-gray-400'>
+                  <h3 className='text-base font-semibold leading-loose text-gray-900 dark:text-gray-300'>
                     {children}
                   </h3>
                 ),
                 h4: ({ children }) => (
-                  <h4 className='text-sm font-semibold leading-loose text-gray-900 dark:text-gray-400'>
+                  <h4 className='text-sm font-semibold leading-loose text-gray-900 dark:text-gray-300'>
                     {children}
                   </h4>
                 ),
                 h5: ({ children }) => (
-                  <h5 className='text-gray-900 dark:text-gray-400'>{children}</h5>
+                  <h5 className='text-gray-900 dark:text-gray-300'>{children}</h5>
                 ),
                 h6: ({ children }) => (
-                  <h6 className='text-gray-900 dark:text-gray-400'>{children}</h6>
+                  <h6 className='text-gray-900 dark:text-gray-300'>{children}</h6>
                 ),
                 table: ({ children }) => <table>{children}</table>,
                 table_head: ({ children }) => <thead>{children}</thead>,

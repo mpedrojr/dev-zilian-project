@@ -5,19 +5,21 @@ import Header from '../components/blog/Header';
 
 const BlogHome = ({ posts }) => {
   return (
-    <section className=' bg-slate-100 dark:bg-gray-900 mx-auto px-4 lg:px-4 xl:px-28'>
-      <Header />
+    <section className=' mx-auto bg-slate-100 dark:bg-gray-900'>
+      <div className='container mx-auto px-4 xl:px-28'>
+        <Header />
 
-      <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
-        <div className='col-span-1 lg:col-span-8'>
-          {posts.map((post, index) => (
-            <PostCardMain key={index} post={post.node} />
-          ))}
-        </div>
-        <div className='col-span-1 lg:col-span-4'>
-          <div className='relative top-8 lg:sticky'>
-            <PostWidget />
-            <Categories />
+        <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
+          <div className='col-span-1 lg:col-span-8'>
+            {posts.map((post, index) => (
+              <PostCardMain key={index} post={post.node} />
+            ))}
+          </div>
+          <div className='col-span-1 lg:col-span-4'>
+            <div className='relative top-8 lg:sticky'>
+              <PostWidget />
+              <Categories />
+            </div>
           </div>
         </div>
       </div>
