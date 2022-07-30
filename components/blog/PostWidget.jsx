@@ -22,7 +22,7 @@ const PostWidget = ({ categories, slug }) => {
   return (
     <>
       <div className=' mb-8 rounded-lg p-8 pb-12 shadow-lg lg:mt-0'>
-        <h3 className='mb-8 border-b pb-4 text-xl font-semibold text-primary'>
+        <h3 className='mb-8 border-b pb-4 text-xl font-semibold text-primary dark:text-gray-200'>
           {slug ? 'Related Posts' : 'Featured Posts'}
         </h3>
         {relatedPosts.map((post, index) => (
@@ -36,8 +36,8 @@ const PostWidget = ({ categories, slug }) => {
                 src={post.featuredImage.url}
               />
             </div>
-            <div className='ml-4 flex-grow'>
-              <p className='font-xs text-gray-500'>
+            <div className='ml-4 flex-grow text-gray-800 dark:text-gray-200'>
+              <p className='font-xs'>
                 {format(new Date(post.createdAt), 'MM/dd/yyyy')}
               </p>
               <Link href={`/post/${post.slug}`} className='text-md' key={index}>

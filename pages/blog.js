@@ -5,7 +5,7 @@ import Header from '../components/blog/Header';
 
 const BlogHome = ({ posts }) => {
   return (
-    <div className='container mx-auto mb-12 px-4 lg:px-4 xl:px-28'>
+    <section className=' bg-slate-100 dark:bg-gray-900 mx-auto px-4 lg:px-4 xl:px-28'>
       <Header />
 
       <div className='grid grid-cols-1 gap-12 lg:grid-cols-12'>
@@ -21,7 +21,7 @@ const BlogHome = ({ posts }) => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

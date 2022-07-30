@@ -15,17 +15,19 @@ const About = () => {
   };
 
   return (
-    <section className='bg-slate-100'>
+    <section className='bg-slate-100 dark:bg-gray-900'>
       <div className='mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-6 lg:pt-16'>
         <div className='mx-auto mb-8 max-w-screen-sm lg:mb-8'>
-          <h2 className='mb-4 text-4xl font-extrabold tracking-tight text-gray-900'>Hi There!</h2>
-          <p className='font-light text-gray-900 dark:text-gray-900 sm:text-xl'>
+          <h2 className='mb-4 text-4xl font-extrabold tracking-tight dark:text-gray-200 text-gray-900'>
+            Hi There!
+          </h2>
+          <p className='font-light text-gray-900 dark:text-gray-200 sm:text-xl'>
             I&apos;m a front-end web developer with a passion for building web
             applications.
           </p>
         </div>
         <div>
-          <div className='text-center text-gray-900 dark:text-gray-900'>
+          <div className='text-center text-gray-900 dark:text-gray-200'>
             <div className='mx-auto mb-4 h-32 w-32'>
               <Image
                 className='mx-auto  rounded-full'
@@ -34,7 +36,7 @@ const About = () => {
               />
             </div>
 
-            <h3 className='mb-1 text-2xl font-bold tracking-tight text-gray-900 '>
+            <h3 className='mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200'>
               <a href='#'>Pedro da C Jr.</a>
             </h3>
             <p>Web Developer</p>
@@ -52,7 +54,7 @@ const About = () => {
 
       {/* Section 2 - Bootcamp */}
 
-      <div className='py-2 text-gray-900'>
+      <div className='py-2 pb-16 text-gray-900 dark:text-gray-200'>
         <div className='container mx-auto'>
           <div className='mx-auto p-4 text-center md:px-10 lg:px-32 xl:max-w-5xl'>
             <h2 className='text-2xl  font-bold leading-none sm:text-4xl'>
@@ -69,7 +71,7 @@ const About = () => {
               was very important to learn to code and to become a web developer.
               See below al the technologies that I leaned during the Bootcamp.
             </p>
-            <div className='mx-auto mt-8 h-18 w-40'>
+            <div className='h-18 mx-auto mt-8 w-40'>
               <Image
                 className='mx-auto rounded-lg'
                 src={NucampLogo}
@@ -78,13 +80,13 @@ const About = () => {
             </div>
           </div>
           <div className='grid grid-cols-5 p-4 md:p-8'>
-            <div className='col-span-full mb-8 text-lg font-semibold flex justify-center px-4 md:col-span-1 md:flex-col md:items-start md:justify-start'>
+            <div className='col-span-full mb-8 flex justify-center px-4 text-lg font-semibold md:col-span-1 md:flex-col md:items-start md:justify-start'>
               <button
                 onClick={handleTab1}
                 className={
                   activeTab === 'tab1'
-                    ? 'border-b-2 px-2 py-1 dark:border-violet-400 dark:text-gray-900 md:border-l-2 md:border-b-0 md:py-3'
-                    : 'border-b-2 p-2 dark:border-gray-300 dark:text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                    ? 'border-b-2 px-2 py-1 border-violet-500 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
+                    : 'border-b-2 p-2 border-gray-300 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
                 }
               >
                 Front-End
@@ -93,8 +95,8 @@ const About = () => {
                 onClick={handleTab2}
                 className={
                   activeTab === 'tab2'
-                    ? 'border-b-2 px-2 py-1 dark:border-violet-400 text-gray-900 md:border-l-2 md:border-b-0 md:py-3'
-                    : 'border-b-2 p-2 dark:border-gray-300 dark:text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                    ? 'border-b-2 px-2 py-1 text-gray-900 dark:text-gray-200 border-violet-500 md:border-l-2 md:border-b-0 md:py-3'
+                    : 'border-b-2 p-2 border-gray-300 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
                 }
               >
                 Back-End
@@ -112,7 +114,9 @@ const About = () => {
                 >
                   <p className='text-5xl'> {list.icon}</p>
 
-                  <h5 className='text-xl lg:text-3xl font-semibold'>{list.title}</h5>
+                  <h5 className='text-xl font-semibold lg:text-3xl'>
+                    {list.title}
+                  </h5>
                   <p className='lg:pr-32'>{list.description}</p>
                 </div>
               ))}

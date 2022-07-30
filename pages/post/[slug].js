@@ -18,7 +18,7 @@ const PostDetails = ({ post }) => {
   }
 
   return (
-    <div className='container mx-auto mb-8 px-4 md:px-6 lg:px-10 xl:px-28'>
+    <div className='container bg-slate-100 dark:bg-gray-900 mx-auto pb-8 px-4 md:px-6 lg:px-10 xl:px-28'>
       <Header />
 
       <div className='grid grid-cols-1 gap-8 lg:grid-cols-12'>
@@ -43,17 +43,21 @@ const PostDetails = ({ post }) => {
 
 export default PostDetails;
 
+
 // Fetch data at build time
 export async function getStaticProps({ params }) {
   const data = await getPostDetails(params.slug);
   return {
-    props: { post: data },
+    props: {
+      post: data,
+    },
   };
 }
 
+// Specify dynamic routes to pre-render pages based on data.
+// The HTML is generated at build time and will be reused on each request.
 export async function getStaticPaths() {
   const posts = await getPosts();
-
   return {
     paths: posts.map(({ node: { slug } }) => ({ params: { slug } })),
     fallback: true,

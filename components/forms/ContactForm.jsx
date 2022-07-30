@@ -48,7 +48,7 @@ const ContactForm = () => {
 
           <form onSubmit={handleSubmit}>
             <div className='mb-6'>
-              <label className='mb-2 block text-base font-medium text-primary'>
+              <label className='mb-2 block text-base font-medium text-primary dark:text-gray-200'>
                 Name*
               </label>
               <input
@@ -57,13 +57,13 @@ const ContactForm = () => {
                 name='displayName'
                 value={displayName}
                 onChange={handleChange}
-                className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
+                className='block w-full rounded-lg border border-gray-600 dark:border-amber-700 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
                 placeholder='Enter your name here'
                 required
               />
             </div>
             <div className='mb-6'>
-              <label className='mb-2 block text-base font-medium text-primary'>
+              <label className='mb-2 block text-base font-medium text-primary dark:text-gray-200'>
                 Email*
               </label>
               <input
@@ -72,13 +72,13 @@ const ContactForm = () => {
                 name='email'
                 value={email}
                 onChange={handleChange}
-                className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary  placeholder-primary'
+                className='block w-full  rounded-lg border border-gray-600 dark:border-amber-700 bg-gray-50 p-2.5 text-base text-primary  placeholder-primary'
                 placeholder='Enter your email here'
                 required
               />
             </div>
             <div className='mb-6'>
-              <label className='mb-2 block text-base font-medium text-primary'>
+              <label className='mb-2 block text-base font-medium text-primary dark:text-gray-200'>
                 Message*
               </label>
               <textarea
@@ -87,7 +87,7 @@ const ContactForm = () => {
                 name='message'
                 value={message}
                 onChange={handleChange}
-                className='block h-44 w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary  placeholder-primary '
+                className='block h-44 w-full  rounded-lg border border-gray-600 dark:border-amber-700 bg-gray-50 p-2.5 text-base text-primary  placeholder-primary '
                 placeholder='Leave your message'
                 required
               />
@@ -96,7 +96,7 @@ const ContactForm = () => {
               <div className='mt-6 flex h-5 items-center justify-center'>
                 <button
                   type='submit'
-                  className='w-full rounded-lg bg-primary px-5 py-2.5 text-center text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto'
+                  className='w-full rounded-lg bg-primary dark:bg-gray-200 px-5 py-2.5 text-center text-base font-medium text-white dark:text-primary hover:bg-amber-700 focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto'
                 >
                   Submit
                 </button>

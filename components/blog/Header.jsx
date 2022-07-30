@@ -22,10 +22,10 @@ const Header = () => {
   };
 
   return (
-    <nav className='mt-2 rounded-lg px-6  py-3'>
+    <nav className='rounded-lg px-6  py-3'>
       <div className='container mx-auto flex-wrap items-center  justify-between lg:flex'>
-        <Link href='/blog' className=' text-primary'>
-          <a className='mt-4 mb-4 flex justify-center self-center whitespace-nowrap text-center text-3xl font-bold text-primary lg:text-4xl '>
+        <Link href='/blog'>
+          <a className='mt-4 mb-4 flex justify-center self-center whitespace-nowrap text-center text-3xl font-bold text-primary dark:text-gray-200 lg:text-4xl '>
             Blog
           </a>
         </Link>

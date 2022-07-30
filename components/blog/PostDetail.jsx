@@ -8,17 +8,17 @@ import Image from 'next/image';
 const PostDetail = ({ post }) => {
   return (
     <>
-      <div className='mb-8 mt-0 rounded-lg bg-white pb-12 shadow-lg lg:p-8'>
+      <div className='mb-8 mt-0 rounded-lg bg-white dark:bg-gray-900 pb-12 shadow-lg lg:p-8'>
         <div className='mb-0 flex w-full justify-start rounded-lg px-2 md:py-2'>
-          <span className='mb-0 rounded-full px-0 py-1 text-sm dark:text-gray-900'>
+          <span className='mb-0 rounded-full px-0 py-1 text-sm'>
             {post.categories.map((category, i) => (
-              <h1 className='font-semibold text-primary' key={i}>
+              <h1 className='font-semibold text-primary dark:text-gray-400' key={i}>
                 {category.name}
               </h1>
             ))}
           </span>
         </div>
-        <h1 className='mb-4 px-2 pt-1 text-lg font-bold lg:text-3xl'>
+        <h1 className='mb-4 px-2 pt-1 text-lg font-bold text-gray-900 dark:text-gray-200 lg:text-3xl'>
           {post.title}
         </h1>
         <div className='mb-6 overflow-hidden'>
@@ -54,28 +54,36 @@ const PostDetail = ({ post }) => {
                 ol: ({ children }) => <ol>{children}</ol>,
                 li: ({ children }) => <li>{children}</li>,
                 p: ({ children }) => (
-                  <p className='mb-4 text-base leading-relaxed'>{children}</p>
+                  <p className='mb-4 text-base leading-relaxed text-gray-900 dark:text-gray-400'>
+                    {children}
+                  </p>
                 ),
                 h1: ({ children }) => (
-                  <h1 className='text-xl leading-loose'>{children}</h1>
+                  <h1 className='text-xl leading-loose text-gray-900 dark:text-gray-400'>
+                    {children}
+                  </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className='text-lg font-semibold leading-loose'>
+                  <h2 className='text-lg font-semibold leading-loose text-gray-900 dark:text-gray-400'>
                     {children}
                   </h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className='text-base font-semibold leading-loose'>
+                  <h3 className='text-base font-semibold leading-loose text-gray-900 dark:text-gray-400'>
                     {children}
                   </h3>
                 ),
                 h4: ({ children }) => (
-                  <h4 className='text-sm font-semibold leading-loose'>
+                  <h4 className='text-sm font-semibold leading-loose text-gray-900 dark:text-gray-400'>
                     {children}
                   </h4>
                 ),
-                h5: ({ children }) => <h5>{children}</h5>,
-                h6: ({ children }) => <h6>{children}</h6>,
+                h5: ({ children }) => (
+                  <h5 className='text-gray-900 dark:text-gray-400'>{children}</h5>
+                ),
+                h6: ({ children }) => (
+                  <h6 className='text-gray-900 dark:text-gray-400'>{children}</h6>
+                ),
                 table: ({ children }) => <table>{children}</table>,
                 table_head: ({ children }) => <thead>{children}</thead>,
                 table_body: ({ children }) => <tbody>{children}</tbody>,
@@ -96,7 +104,7 @@ const PostDetail = ({ post }) => {
                   if (href.match(/^https?:\/\/|^\/\//i)) {
                     return (
                       <a
-                        className='text-blue-800'
+                        className='text-blue-800 dark:text-amber-500'
                         href={href}
                         target={openInNewTab ? '_blank' : '_self'}
                         rel={'noopener noreferrer'}
@@ -126,12 +134,12 @@ const PostDetail = ({ post }) => {
                 className='justify-center rounded-full align-middle'
                 src={post.author.photo.url}
               />
-              <p className='ml-2 inline align-middle text-lg font-medium text-gray-700'>
+              <p className='ml-2 inline align-middle text-lg font-medium text-gray-700 dark:text-gray-400'>
                 {post.author.name}
               </p>
             </div>
-            <div className='flex items-center font-medium text-gray-700 '>
-              <span className='mr-2 align-middle inline'>
+            <div className='flex items-center font-medium text-gray-700 dark:text-gray-400'>
+              <span className='mr-2 inline align-middle'>
                 <FaRegCalendar />
               </span>
               <span className='inline align-middle'>

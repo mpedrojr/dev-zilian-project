@@ -7,7 +7,7 @@ import Image from 'next/image';
 const PostCardMain = ({ post }) => {
   return (
     <>
-      <div className='container mt-10 dark:text-gray-50 lg:mt-0'>
+      <div className='container mt-10 lg:mt-0'>
         <div className='mx-auto grid-cols-12 lg:grid '>
           <div className='order-first col-span-full row-span-full mb-4 flex  justify-center rounded-lg lg:order-last lg:col-span-3 lg:mb-0 lg:block lg:h-auto lg:w-auto lg:pt-14'>
             <Image
@@ -20,23 +20,23 @@ const PostCardMain = ({ post }) => {
           </div>
           <div className='order-last col-span-full row-span-full flex flex-col p-1 lg:order-first lg:col-span-9 lg:p-10'>
             <div className='flex justify-start'>
-              <span className='mb-2 rounded-full px-3 py-1 text-xs dark:bg-primary dark:text-gray-900'>
+              <span className='mb-2 rounded-full px-3 py-1 text-xs bg-primary dark:bg-gray-300'>
                 {post.categories.map((category, i) => (
-                  <h1 className='text-white' key={i}>
+                  <h1 className='text-white dark:text-primary' key={i}>
                     {category.name}
                   </h1>
                 ))}
               </span>
             </div>
-            <h1 className='text-md font-semibold text-black lg:text-xl'>
+            <h1 className='text-md font-semibold text-black dark:text-gray-200 lg:text-xl'>
               <Link href={`/post/${post.slug}`}>{post.title}</Link>
             </h1>
-            <p className='flex-1 pt-2 text-black sm:flex'>{post.excerpt}</p>
+            <p className='flex-1 pt-2 text-black dark:text-gray-200 sm:flex'>{post.excerpt}</p>
             <Link href={`/post/${post.slug}`}>
               <a
                 rel='noopener noreferrer'
                 href='#'
-                className='inline-flex items-center space-x-2 pt-2 pb-6 text-sm text-black'
+                className='inline-flex items-center space-x-2 pt-2 pb-6 text-sm text-black dark:text-gray-200'
               >
                 <span>Read more</span>
                 <svg
@@ -62,15 +62,15 @@ const PostCardMain = ({ post }) => {
                   className='justify-center rounded-full align-middle'
                   src={post.author.photo.url}
                 />
-                <span className='self-center text-sm text-black'>
+                <span className='self-center text-sm text-black dark:text-gray-200'>
                   {post.author.name}
                 </span>
               </div>
               <div className='flex items-center text-xs'>
-                <span className='mr-1 inline align-middle text-black'>
+                <span className='mr-1 inline align-middle text-black dark:text-gray-200'>
                   <FaRegCalendar />
                 </span>
-                <span className='inline align-middle text-black'>
+                <span className='inline align-middle text-black dark:text-gray-200'>
                   {format(new Date(post.createdAt), 'MM/dd/yyyy')}
                 </span>
               </div>

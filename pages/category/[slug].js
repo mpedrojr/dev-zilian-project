@@ -13,7 +13,7 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <div className='container mx-auto mb-12 px-4 xl:px-24'>
+    <div className='bg-slate-100 dark:bg-gray-900 mx-auto pb-12 px-4 xl:px-24'>
       <Header />
 
       <div className='mt-1 grid grid-cols-1 gap-8 lg:grid-cols-12'>

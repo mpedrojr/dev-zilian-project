@@ -22,7 +22,7 @@ export const front = [
     icon: <SiJavascript className={styles.javascript} />,
     title: 'JavaScript',
     description:
-      'JavaScript is an object-oriented language with first-class functions, and is best known as the scripting language for Web pages, but it\'s used in many non-browser environments as well.',
+      "JavaScript is an object-oriented language with first-class functions, and is best known as the scripting language for Web pages, but it's used in many non-browser environments as well.",
   },
   {
     icon: <FaHtml5 className={styles.html} />,

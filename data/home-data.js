@@ -3,12 +3,11 @@ import { IoLogoJavascript } from 'react-icons/io';
 import { SiCss3, SiTailwindcss } from 'react-icons/si';
 import { BsCodeSquare } from 'react-icons/bs';
 
-
 export const feature = [
   {
     name: 'React',
     description:
-      'The best JavaScript framework/library out there. It\'s a lot of fun to use.',
+      "The best JavaScript framework/library out there. It's a lot of fun to use.",
     icon: <FaReact />,
   },
   {
