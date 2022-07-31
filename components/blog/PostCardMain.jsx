@@ -7,9 +7,9 @@ import Image from 'next/image';
 const PostCardMain = ({ post }) => {
   return (
     <>
-      <div className='container mt-10 lg:mt-0'>
+      <div className='container bg-white dark:bg-gray-900 mt-10 lg:mt-0'>
         <div className='mx-auto grid-cols-12 lg:grid '>
-          <div className='order-first col-span-full row-span-full mb-4 flex  justify-center rounded-lg lg:order-last lg:col-span-3 lg:mb-0 lg:block lg:h-auto lg:w-auto lg:pt-14'>
+          <div className='order-first col-span-full row-span-full mb-4 flex justify-center rounded-lg lg:order-last lg:col-span-3 lg:mb-0 lg:block lg:h-auto lg:w-auto lg:pt-14'>
           <Link href={`/post/${post.slug}`}>
             <a>
             <Image

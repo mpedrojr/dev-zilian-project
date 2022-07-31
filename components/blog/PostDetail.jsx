@@ -13,7 +13,7 @@ const PostDetail = ({ post }) => {
           <span className='mb-1 rounded-full bg-primary px-3 py-1 text-sm dark:bg-gray-300'>
             {post.categories.map((category, i) => (
               <h1
-                className='font-semibold text-primary dark:text-primary'
+                className='text-white dark:text-primary'
                 key={i}
               >
                 {category.name}

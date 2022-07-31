@@ -13,7 +13,7 @@ const CategoryPost = ({ posts }) => {
   }
 
   return (
-    <section className='mx-auto bg-slate-100 dark:bg-gray-900'>
+    <section className='mx-auto bg-white dark:bg-gray-900'>
       <div className='container mx-auto px-4 pb-12 xl:px-28'>
         <Header />
 
