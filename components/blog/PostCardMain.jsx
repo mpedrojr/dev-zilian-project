@@ -10,6 +10,8 @@ const PostCardMain = ({ post }) => {
       <div className='container mt-10 lg:mt-0'>
         <div className='mx-auto grid-cols-12 lg:grid '>
           <div className='order-first col-span-full row-span-full mb-4 flex  justify-center rounded-lg lg:order-last lg:col-span-3 lg:mb-0 lg:block lg:h-auto lg:w-auto lg:pt-14'>
+          <Link href={`/post/${post.slug}`}>
+            <a>
             <Image
               src={post.featuredImage.url}
               alt={post.title}
@@ -17,6 +19,8 @@ const PostCardMain = ({ post }) => {
               width={700}
               className='rounded-lg'
             />
+            </a>
+            </Link>
           </div>
           <div className='order-last col-span-full row-span-full flex flex-col p-1 lg:order-first lg:col-span-9 lg:p-10'>
             <div className='flex justify-start'>

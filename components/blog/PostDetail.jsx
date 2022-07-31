@@ -8,11 +8,14 @@ import Image from 'next/image';
 const PostDetail = ({ post }) => {
   return (
     <>
-      <div className='mb-8 mt-0 rounded-lg bg-white dark:bg-gray-900 pb-12 shadow-lg lg:p-8'>
+      <div className='mb-8 mt-0 rounded-lg bg-white pb-12 shadow-lg dark:bg-gray-900 lg:p-8'>
         <div className='mb-0 flex w-full justify-start rounded-lg px-2 md:py-2'>
-          <span className='mb-0 rounded-full px-0 py-1 text-sm'>
+          <span className='mb-1 rounded-full bg-primary px-3 py-1 text-sm dark:bg-gray-300'>
             {post.categories.map((category, i) => (
-              <h1 className='font-semibold text-primary dark:text-gray-400' key={i}>
+              <h1
+                className='font-semibold text-primary dark:text-primary'
+                key={i}
+              >
                 {category.name}
               </h1>
             ))}
@@ -54,35 +57,39 @@ const PostDetail = ({ post }) => {
                 ol: ({ children }) => <ol>{children}</ol>,
                 li: ({ children }) => <li>{children}</li>,
                 p: ({ children }) => (
-                  <p className='mb-4 text-base leading-relaxed text-gray-900 dark:text-gray-300'>
+                  <p className='mb-4 text-base leading-relaxed text-gray-900 dark:text-gray-400'>
                     {children}
                   </p>
                 ),
                 h1: ({ children }) => (
-                  <h1 className='text-3xl leading-loose text-gray-900 dark:text-gray-300'>
+                  <h1 className='mb-4 text-xl text-gray-900 dark:text-gray-300'>
                     {children}
                   </h1>
                 ),
                 h2: ({ children }) => (
-                  <h2 className='text-2xl font-bold leading-loose text-gray-900 dark:text-gray-300'>
+                  <h2 className='mb-4 text-lg text-gray-900 dark:text-gray-300'>
                     {children}
                   </h2>
                 ),
                 h3: ({ children }) => (
-                  <h3 className='text-base font-semibold leading-loose text-gray-900 dark:text-gray-300'>
+                  <h3 className='mb-4 text-base text-gray-900 dark:text-gray-300'>
                     {children}
                   </h3>
                 ),
                 h4: ({ children }) => (
-                  <h4 className='text-sm font-semibold leading-loose text-gray-900 dark:text-gray-300'>
+                  <h4 className='mb-4 text-sm text-gray-900 dark:text-gray-300'>
                     {children}
                   </h4>
                 ),
                 h5: ({ children }) => (
-                  <h5 className='text-gray-900 dark:text-gray-300'>{children}</h5>
+                  <h5 className='mb-4 text-gray-900 dark:text-gray-300'>
+                    {children}
+                  </h5>
                 ),
                 h6: ({ children }) => (
-                  <h6 className='text-gray-900 dark:text-gray-300'>{children}</h6>
+                  <h6 className='mb-4 text-gray-900 dark:text-gray-300'>
+                    {children}
+                  </h6>
                 ),
                 table: ({ children }) => <table>{children}</table>,
                 table_head: ({ children }) => <thead>{children}</thead>,
@@ -104,7 +111,7 @@ const PostDetail = ({ post }) => {
                   if (href.match(/^https?:\/\/|^\/\//i)) {
                     return (
                       <a
-                        className='text-blue-800 dark:text-amber-500'
+                        className='text-blue-800 dark:text-blue-500'
                         href={href}
                         target={openInNewTab ? '_blank' : '_self'}
                         rel={'noopener noreferrer'}
