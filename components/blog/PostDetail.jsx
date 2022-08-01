@@ -10,12 +10,9 @@ const PostDetail = ({ post }) => {
     <>
       <div className='mb-8 mt-0 rounded-lg bg-white pb-12 shadow-lg dark:bg-gray-900 lg:p-8'>
         <div className='mb-0 flex w-full justify-start rounded-lg px-2 md:py-2'>
-          <span className='mb-1 rounded-full bg-primary px-3 py-1 text-sm dark:bg-gray-300'>
+          <span className='mb-1 mt-6 rounded-full bg-primary px-3 py-1 text-sm dark:bg-gray-300 lg:mt-0'>
             {post.categories.map((category, i) => (
-              <h1
-                className='text-white dark:text-primary'
-                key={i}
-              >
+              <h1 className='text-white dark:text-primary' key={i}>
                 {category.name}
               </h1>
             ))}

@@ -71,7 +71,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className='w-xl mx-auto bg-primary dark:bg-gray-900 p-3 dark:border-b'>
+    <nav className='w-xl mx-auto bg-primary p-3 dark:border-b dark:bg-gray-900'>
       <div className='flex items-center justify-around '>
         <div className='text-white md:hidden' onClick={handleCLick}>
           {!nav ? <FaBars /> : <FaTimes />}
@@ -129,22 +129,15 @@ const Navbar = () => {
             className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
           >
             <Link href='/'>
-              <a>HOME</a>
+              <button className='w-full'>HOME</button>
             </Link>
           </div>
-          {/* <div
-						onClick={handleClick}
-						className='border-b-2 border-b-primary leading-10 w-80 text-center	'>
-						<Link href='/'>
-							<a>PRODUCTS</a>
-						</Link>
-					</div> */}
           <div
             onClick={handleClick}
             className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
           >
             <Link href='/about'>
-              <a>ABOUT</a>
+              <button className='w-full'>ABOUT</button>
             </Link>
           </div>
           <div
@@ -152,7 +145,7 @@ const Navbar = () => {
             className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
           >
             <Link href='/contact'>
-              <a>CONTACT</a>
+              <button className='w-full'>CONTACT</button>
             </Link>
           </div>
           <div
@@ -160,7 +153,7 @@ const Navbar = () => {
             className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
           >
             <Link href='/blog'>
-              <a>BLOG</a>
+              <button className='w-full'>BLOG</button>
             </Link>
           </div>
         </div>

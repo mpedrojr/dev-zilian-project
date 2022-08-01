@@ -1,18 +1,37 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import Dog from '../images/dog_404.png';
 
 const PageNotFound = () => {
   return (
-    <div className='w-xl flex h-screen flex-col items-center justify-center space-y-5 bg-white'>
-      <h1 className='text-9xl text-amber-500'>404</h1>
-      <h3 className='text-3xl'>Page not found</h3>
-      <p>Please use click below to navigate back to the home page.</p>
-      <Link
-        href='/'
-        className='flex items-center justify-center rounded-md border border-transparent bg-primary px-8 py-3 text-base font-medium text-white hover:bg-amber-700 md:py-3 md:px-8 md:text-lg'
-      >
-        Home
-      </Link>
-    </div>
+    <section className='w-xl mx-auto my-auto bg-white dark:bg-gray-900'>
+      <div className='flex flex-col items-center justify-center space-y-5 py-28 lg:py-44'>
+        <div className='h-48 w-48'>
+          <Image src={Dog} alt='dog' />
+        </div>
+        <h1 className='text-4xl font-bold text-amber-500 lg:text-6xl'>
+          Woof woof!
+        </h1>
+        <h3 className='text-3xl font-semibold text-primary dark:text-gray-300'>
+          Page not found.
+        </h3>
+        <p className='text-center text-primary dark:text-gray-300'>
+          Click below to navigate to the home page.
+        </p>
+        <div className='flex space-x-4'>
+          <Link href='/'>
+            <a className='flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700 md:text-lg'>
+              Home
+            </a>
+          </Link>
+          <Link href='/blog'>
+            <a className='flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700  md:text-lg'>
+              Blog
+            </a>
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 
