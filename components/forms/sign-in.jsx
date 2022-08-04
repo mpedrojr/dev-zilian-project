@@ -5,6 +5,8 @@ import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase.utils';
+import { FiLogIn } from 'react-icons/fi';
+import { FaGoogle } from 'react-icons/fa';
 
 const defaultFormFields = {
   email: '',
@@ -63,24 +65,26 @@ const SignInForm = () => {
   return (
     <div className='mb-28 w-full max-w-md space-y-8'>
       <div className='mb-12 text-center'>
-        <p className='mt-2 text-2xl font-extrabold leading-8 tracking-tight text-primary sm:text-3xl'>
+        <p className='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-primary dark:text-gray-100 lg:text-4xl'>
           Sign In
         </p>
         <Link href='/signup'>
-          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 lg:mx-auto'>
+          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 dark:text-amber-500 lg:mx-auto lg:text-lg'>
             Do not have an account?
           </button>
         </Link>
       </div>
       <div className='text-center'>
         {errorMessage && (
-          <p className='error font-medium text-red-800'>{errorMessage}</p>
+          <p className='error font-medium text-red-800 dark:text-amber-500'>
+            {errorMessage}
+          </p>
         )}
       </div>
 
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
             Your email
           </label>
           <input
@@ -95,7 +99,7 @@ const SignInForm = () => {
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
             Your password
           </label>
           <input
@@ -111,7 +115,7 @@ const SignInForm = () => {
         </div>
         <div className='text-center'>
           <Link href='/forgotpassword'>
-            <button className='text-md max-w-2xl text-center font-medium text-blue-800 lg:mx-auto'>
+            <button className='text-md max-w-2xl text-center font-medium text-blue-800 dark:text-amber-500 lg:mx-auto lg:text-lg'>
               Forgot your password?
             </button>
           </Link>
@@ -119,21 +123,25 @@ const SignInForm = () => {
         <div className='mt-6'>
           <button
             type='submit'
-            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-          >
-            Sign in
+            className='text-md group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700 lg:text-lg'>
+            <span>
+              <FiLogIn />
+            </span>
+            <span className='ml-2'>Sign in</span>
           </button>
         </div>
         <div className='mt-2 flex w-full justify-center align-middle'>
-          <h3 className='font-medium text-blue-800'>or</h3>
+          <h3 className='font-medium text-blue-800 dark:text-gray-100'>or</h3>
         </div>
         <div className='mt-2'>
           <button
             type='button'
             onClick={signInWithGoogle}
-            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-          >
-            Sign-in with Google
+            className='text-md group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700 lg:text-lg'>
+            <span>
+              <FaGoogle />
+            </span>
+            <span className='ml-2'>Continue with Google</span>
           </button>
         </div>
       </form>

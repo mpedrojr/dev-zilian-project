@@ -7,24 +7,24 @@ import Image from 'next/image';
 const PostCardMain = ({ post }) => {
   return (
     <>
-      <div className='container bg-white dark:bg-gray-900 mt-10 lg:mt-0'>
+      <div className='container mt-10 bg-white dark:bg-gray-900 lg:mt-0'>
         <div className='mx-auto grid-cols-12 lg:grid '>
           <div className='order-first col-span-full row-span-full mb-4 flex justify-center rounded-lg lg:order-last lg:col-span-3 lg:mb-0 lg:block lg:h-auto lg:w-auto lg:pt-14'>
-          <Link href={`/post/${post.slug}`}>
-            <a>
-            <Image
-              src={post.featuredImage.url}
-              alt={post.title}
-              height={350}
-              width={700}
-              className='rounded-lg'
-            />
-            </a>
+            <Link href={`/post/${post.slug}`}>
+              <a>
+                <Image
+                  src={post.featuredImage.url}
+                  alt={post.title}
+                  height={350}
+                  width={700}
+                  className='rounded-lg'
+                />
+              </a>
             </Link>
           </div>
           <div className='order-last col-span-full row-span-full flex flex-col p-1 lg:order-first lg:col-span-9 lg:p-10'>
             <div className='flex justify-start'>
-              <span className='mb-2 rounded-full px-3 py-1 text-xs bg-primary dark:bg-gray-300'>
+              <span className='mb-2 rounded-full bg-primary px-3 py-1 text-xs dark:bg-gray-300'>
                 {post.categories.map((category, i) => (
                   <h1 className='text-white dark:text-primary' key={i}>
                     {category.name}
@@ -35,25 +35,24 @@ const PostCardMain = ({ post }) => {
             <h1 className='text-md font-semibold text-black dark:text-gray-200 lg:text-xl'>
               <Link href={`/post/${post.slug}`}>{post.title}</Link>
             </h1>
-            <p className='flex-1 pt-2 text-black dark:text-gray-200 sm:flex'>{post.excerpt}</p>
+            <p className='flex-1 pt-2 text-black dark:text-gray-200 sm:flex'>
+              {post.excerpt}
+            </p>
             <Link href={`/post/${post.slug}`}>
               <a
                 rel='noopener noreferrer'
                 href='#'
-                className='inline-flex items-center space-x-2 pt-2 pb-6 text-sm text-black dark:text-gray-200'
-              >
+                className='inline-flex items-center space-x-2 pt-2 pb-6 text-sm text-black dark:text-gray-200'>
                 <span>Read more</span>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 20 20'
                   fill='currentColor'
-                  className='h-4 w-4'
-                >
+                  className='h-4 w-4'>
                   <path
                     fillRule='evenodd'
                     d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
-                    clipRule='evenodd'
-                  ></path>
+                    clipRule='evenodd'></path>
                 </svg>
               </a>
             </Link>

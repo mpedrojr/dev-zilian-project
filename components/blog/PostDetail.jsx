@@ -112,8 +112,7 @@ const PostDetail = ({ post }) => {
                         href={href}
                         target={openInNewTab ? '_blank' : '_self'}
                         rel={'noopener noreferrer'}
-                        {...rest}
-                      >
+                        {...rest}>
                         {children}
                       </a>
                     );

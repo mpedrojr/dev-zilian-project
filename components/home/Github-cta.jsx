@@ -5,7 +5,7 @@ const RepoCta = () => {
   return (
     <section className='mx-auto py-6 text-gray-50'>
       <div className='container mx-auto px-2 xl:px-44'>
-        <div className='flex flex-col justify-around rounded-lg bg-primary dark:bg-gray-800 p-4 py-8 text-center md:p-10 lg:flex-row'>
+        <div className='flex flex-col justify-around rounded-lg bg-primary p-4 py-8 text-center dark:bg-gray-800 md:p-10 lg:flex-row'>
           <div className='flex flex-col justify-center lg:text-left'>
             <p className='mb-1 text-xs font-medium uppercase tracking-widest text-gray-200 lg:text-sm'>
               You&apos;re welcome to check my code
@@ -18,12 +18,10 @@ const RepoCta = () => {
             <Link
               href='https://github.com/mpedrojr/dev-zilian-project'
               rel='noopener noreferrer'
-              alt='Link to the GitHub repository'
-            >
+              alt='Link to the GitHub repository'>
               <a
                 target='_blank'
-                className='inline-flex items-center rounded-lg bg-gray-200 px-6 py-3 text-gray-900'
-              >
+                className='inline-flex items-center rounded-lg bg-gray-200 px-6 py-3 text-gray-900'>
                 <FaGithub className='h-6 w-6' />
                 <span className='ml-4 flex flex-col items-start leading-none'>
                   {/* <span className='mb-1 text-xs'>GET IT ON</span> */}

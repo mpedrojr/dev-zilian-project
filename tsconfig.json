@@ -22,7 +22,8 @@
     "components/home/Github-cta.jsx",
     "components/home/Blog-cta.jsx",
     "components/home/Features.jsx",
-    "components/home/HeroHome.jsx"
-, "components/Footer.jsx"  ],
+    "components/home/HeroHome.jsx",
+    "components/Footer.jsx"
+  ],
   "exclude": ["node_modules"]
 }

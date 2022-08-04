@@ -39,8 +39,7 @@ const Header = () => {
             data-dropdown-toggle='dropdownNavbar'
             rel='noopener noreferrer'
             href='#'
-            className='border-b-2 border-primary px-5 py-1 text-center font-semibold text-primary dark:border-gray-300 dark:text-gray-300'
-          >
+            className='border-b-2 border-primary px-5 py-1 text-center font-semibold text-primary dark:border-gray-300 dark:text-gray-300'>
             Categories
           </button>
         </div>

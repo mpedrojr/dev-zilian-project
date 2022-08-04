@@ -98,8 +98,7 @@ const ContactForm = () => {
               <div className='mt-6 flex h-5 items-center justify-center'>
                 <button
                   type='submit'
-                  className='w-full rounded-lg bg-primary px-5 py-2.5 text-center text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-200 dark:text-primary sm:w-auto'
-                >
+                  className='w-full rounded-lg bg-primary px-5 py-2.5 text-center text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-gray-200 dark:text-primary sm:w-auto'>
                   Submit
                 </button>
               </div>

@@ -85,7 +85,7 @@ export const onAuthStateChangedListener = (callback) =>
 //! Password Reset !//
 
 export const forgotPasswordFeature = async (email) => {
-  return sendPasswordResetEmail(auth, email, {
+  return await sendPasswordResetEmail(auth, email, {
     url: 'http://localhost:3000/signin',
   });
 };

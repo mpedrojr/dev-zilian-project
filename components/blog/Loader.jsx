@@ -5,14 +5,12 @@ const Loader = () => (
     <button
       type='button'
       className='inline-flex cursor-not-allowed items-center rounded-md border border-transparent bg-rose-600 px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out hover:bg-rose-500 focus:border-rose-700 active:bg-rose-700'
-      disabled=''
-    >
+      disabled=''>
       <svg
         className='-ml-1 mr-3 h-5 w-5 animate-spin text-white'
         xmlns='http://www.w3.org/2000/svg'
         fill='none'
-        viewBox='0 0 24 24'
-      >
+        viewBox='0 0 24 24'>
         <circle
           className='opacity-25'
           cx='12'

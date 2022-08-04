@@ -54,23 +54,25 @@ const SignUpForm = () => {
   return (
     <div className='mb-12 w-full max-w-md space-y-8'>
       <div className='mb-12 justify-center text-center'>
-        <p className='mt-2 text-2xl font-extrabold leading-8 tracking-tight text-primary sm:text-3xl'>
+        <p className='mt-2 text-3xl font-extrabold  text-primary dark:text-gray-100 lg:text-4xl'>
           Create an account
         </p>
         <Link href='/signin'>
-          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 lg:mx-auto'>
+          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 dark:text-amber-500 lg:mx-auto lg:text-lg'>
             Already have an account?
           </button>
         </Link>
       </div>
       <div className='text-center'>
         {errorMessage && (
-          <p className='error font-medium text-red-800'>{errorMessage}</p>
+          <p className='error font-medium text-red-800 dark:text-amber-500'>
+            {errorMessage}
+          </p>
         )}
       </div>
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
             Name
           </label>
           <input
@@ -85,7 +87,7 @@ const SignUpForm = () => {
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
             Email
           </label>
           <input
@@ -100,7 +102,7 @@ const SignUpForm = () => {
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
             Password
           </label>
           <input
@@ -109,13 +111,13 @@ const SignUpForm = () => {
             name='password'
             value={password}
             onChange={handleChange}
-            className='block w-full   rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary '
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary '
             placeholder='Leave your message'
             required
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
             Confirm password
           </label>
           <input
@@ -132,8 +134,7 @@ const SignUpForm = () => {
         <div className='mt-6'>
           <button
             type='submit'
-            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-          >
+            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700 lg:text-lg'>
             Submit
           </button>
         </div>

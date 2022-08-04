@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Link from 'next/link';
 import Logo from '../images/logodev-white.svg';
 import { BsMoonStars } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 //! Auth configuration !//
-// import { UserContext } from "../contexts/user.context";
-// import { signOutUser } from "../utils/firebase.utils";
+import { UserContext } from '../contexts/user.context';
+import { signOutUser } from '../utils/firebase.utils';
 //! Auth configuration !//
 import { FaBars, FaTimes } from 'react-icons/fa';
+import { FiLogIn, FiLogOut } from 'react-icons/fi';
 
 const Navbar = () => {
   //# Theme Dark Mode #//
@@ -26,8 +27,7 @@ const Navbar = () => {
       return (
         <button
           className='h-6 w-6 text-white'
-          onClick={() => setTheme('light')}
-        >
+          onClick={() => setTheme('light')}>
           <FiSun />
         </button>
       );
@@ -41,13 +41,13 @@ const Navbar = () => {
   };
   //# Theme Dark #//
   //! Auth configuration !//
-  // const { currentUser, setCurrentUser } = useContext(UserContext);
-  // // console.log(currentUser);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+  // console.log(currentUser);
 
-  // const signOutHandler = async () => {
-  // 	await signOutUser();
-  // 	setCurrentUser(null);
-  // };
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  };
   //! Auth configuration !//
 
   const [nav, setNav] = useState(false);
@@ -87,9 +87,6 @@ const Navbar = () => {
           <Link href='/'>
             <a>HOME</a>
           </Link>
-          {/* <Link href='#'>
-						<a>PRODUCTS</a>
-					</Link> */}
           <Link href='/about'>
             <a>ABOUT</a>
           </Link>
@@ -100,21 +97,34 @@ const Navbar = () => {
             <a>BLOG</a>
           </Link>
         </div>
-        <div className='md:flex'>{renderThemeChanger()}</div>
-        {/* {currentUser ? (
-					<button
-						type="button"
-						onClick={signOutHandler}
-						className=" p-3 px-6 pt-2 text-white bg-amber-800 rounded-full baseline md:block">
-						Sign out
-					</button>
-				) : (
-					<Link onClick={() => setNav(false)} href="/signin">
-						<button className="p-3 px-6 pt-2 text-white bg-amber-800 rounded-full baseline md:block">
-							Login
-						</button>
-					</Link>
-				)} */}
+        <div className='flex md:hidden'>{renderThemeChanger()}</div>
+        <div className='hidden items-center md:flex'>
+          <div className='mr-6 md:flex lg:mr-12'>{renderThemeChanger()}</div>
+          {currentUser ? (
+            <button
+              type='button'
+              onClick={signOutHandler}
+              className='flex items-center font-bold text-gray-100'>
+              <span className='mr-4 hidden lg:inline'>LOGOUT</span>
+              <span className='inline'>
+                <FiLogOut />
+              </span>
+            </button>
+          ) : (
+            <div>
+              <Link href='/signin'>
+                <button
+                  onClick={() => setNav(false)}
+                  className=' flex items-center font-bold text-white'>
+                  <span className='mr-4 hidden lg:inline'>LOGIN</span>
+                  <span className='inline'>
+                    <FiLogIn />
+                  </span>
+                </button>
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
       <div className='md:hidden'>
         <div
@@ -122,38 +132,60 @@ const Navbar = () => {
             !nav
               ? 'hidden'
               : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 border-b bg-white py-8 pb-20 font-secondary font-bold text-primary drop-shadow-md dark:border-b-gray-200 dark:bg-gray-900 dark:text-gray-200 sm:w-auto sm:self-center'
-          }
-        >
-          <div
-            onClick={handleClick}
-            className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
-          >
+          }>
+          <div className='mb-4 ml-6'>
+            {currentUser ? (
+              <button
+                type='button'
+                onClick={signOutHandler}
+                className='flex items-center font-bold text-gray-900 dark:text-gray-100'>
+                <span className='mr-4 inline'>LOGOUT</span>
+                <span className='inline'>
+                  <FiLogOut />
+                </span>
+              </button>
+            ) : (
+              <div>
+                <Link href='/signin'>
+                  <button
+                    onClick={() => setNav(false)}
+                    className=' flex items-center font-bold text-gray-900 dark:text-gray-100'>
+                    <span className='mr-4 inline'>LOGIN</span>
+                    <span className='inline'>
+                      <FiLogIn />
+                    </span>
+                  </button>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
             <Link href='/'>
-              <button className='w-full'>HOME</button>
+              <button onClick={handleClick} className='w-full'>
+                HOME
+              </button>
             </Link>
           </div>
-          <div
-            onClick={handleClick}
-            className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
-          >
+          <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
             <Link href='/about'>
-              <button className='w-full'>ABOUT</button>
+              <button onClick={handleClick} className='w-full'>
+                ABOUT
+              </button>
             </Link>
           </div>
-          <div
-            onClick={handleClick}
-            className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
-          >
+          <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
             <Link href='/contact'>
-              <button className='w-full'>CONTACT</button>
+              <button onClick={handleClick} className='w-full'>
+                CONTACT
+              </button>
             </Link>
           </div>
-          <div
-            onClick={handleClick}
-            className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'
-          >
+          <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
             <Link href='/blog'>
-              <button className='w-full'>BLOG</button>
+              <button onClick={handleClick} className='w-full'>
+                BLOG
+              </button>
             </Link>
           </div>
         </div>

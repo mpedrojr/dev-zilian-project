@@ -18,14 +18,15 @@ const Features = () => {
         {feature.map((feature) => (
           <div
             key={feature.name}
-            className='flex flex-col items-center rounded-lg bg-primary dark:bg-gray-200 p-4 text-center text-white'
-          >
+            className='flex flex-col items-center rounded-lg bg-primary p-4 text-center text-white dark:bg-gray-200'>
             <p className='text-3xl dark:text-primary'>{feature.icon}</p>
             <h3 className='my-3 text-center text-xl font-semibold text-white dark:text-primary'>
               {feature.name}
             </h3>
             <div className='space-y-1 leading-tight'>
-              <p className='text-center text-white dark:text-primary'>{feature.description}</p>
+              <p className='text-center text-white dark:text-primary'>
+                {feature.description}
+              </p>
             </div>
           </div>
         ))}

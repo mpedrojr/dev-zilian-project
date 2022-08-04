@@ -4,7 +4,7 @@ import { FaDiscord, FaFacebook, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className='bg-primary dark:bg-gray-900 p-4 sm:p-6 border-t dark:border-t-gray-200'>
+    <footer className='border-t bg-primary p-4 dark:border-t-gray-200 dark:bg-gray-900 sm:p-6'>
       <div className='md:flex md:justify-between'>
         <div className='-ml-8 mb-6 md:ml-2 md:mb-0'>
           <Link href='/' className='flex items-start'>
@@ -35,8 +35,7 @@ const Footer = () => {
                 <Link
                   href='https://github.com/mpedrojr/dev-zilian-project'
                   rel='noopener noreferrer'
-                  className='hover:underline '
-                >
+                  className='hover:underline '>
                   <a target='_blank' className='hover:underline'>
                     Github
                   </a>
@@ -46,8 +45,7 @@ const Footer = () => {
                 <Link
                   href='https://www.linkedin.com/in/mpedrocjr/'
                   rel='noopener noreferrer'
-                  className='hover:underline'
-                >
+                  className='hover:underline'>
                   <a target='_blank' className='hover:underline'>
                     Linkedin
                   </a>
@@ -88,24 +86,21 @@ const Footer = () => {
         <div className='mt-4 flex space-x-6 sm:mt-0 sm:justify-center md:mr-12'>
           <Link
             href='#'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
-          >
+            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
             <button className='text-2xl text-zinc-400'>
               <FaDiscord />
             </button>
           </Link>
           <Link
             href='#'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
-          >
+            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
             <button className='text-2xl text-zinc-400'>
               <FaFacebook />
             </button>
           </Link>
           <Link
             href='#'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
-          >
+            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
             <button className='text-2xl text-zinc-400'>
               <FaInstagram />
             </button>

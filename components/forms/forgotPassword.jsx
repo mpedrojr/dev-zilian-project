@@ -11,7 +11,7 @@ const PasswordRecovery = () => {
   const { email } = formFields;
 
   const [errorMessage, setErrorMessage] = useState('');
-  // const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -19,18 +19,15 @@ const PasswordRecovery = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // forgotPasswordFeature(email);
 
     try {
       await forgotPasswordFeature(email);
-
+      setMessage('Check your email for a password reset link.');
       resetFormFields();
     } catch (error) {
-      switch (error.code) {
-        case 'auth/user-not-found':
-          setErrorMessage('No user associated with this email');
-          break;
-        default:
+      if (error.code === 'auth/user-not-found') {
+        setErrorMessage('No user associated with this email');
+        resetFormFields();
       }
     }
   };
@@ -44,11 +41,11 @@ const PasswordRecovery = () => {
   return (
     <div className='mb-28 w-full max-w-md space-y-8'>
       <div className='mb-12 text-center'>
-        <p className='mt-2 text-2xl font-extrabold leading-8 tracking-tight text-primary sm:text-3xl'>
+        <p className='mt-2 text-3xl font-extrabold leading-8 tracking-tight text-primary dark:text-gray-100 sm:text-3xl lg:text-4xl'>
           Forgot Password
         </p>
         <Link href='/signin'>
-          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 lg:mx-auto'>
+          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 dark:text-amber-600 lg:mx-auto lg:text-lg'>
             Sign In?
           </button>
         </Link>
@@ -56,18 +53,22 @@ const PasswordRecovery = () => {
 
       <div className='text-center'>
         {errorMessage && (
-          <p className='error font-medium text-red-800'>{errorMessage}</p>
+          <p className='error rounded-r-md border-l-8 border-l-red-500 bg-white py-1 align-middle font-medium text-red-500 dark:bg-gray-100 dark:text-red-500 '>
+            {errorMessage}
+          </p>
         )}
       </div>
-      {/* <div className="text-center">
-				{message && (
-					<p className="success text-red-800 font-medium">{message}</p>
-				)}
-			</div> */}
+      <div className='text-center'>
+        {message && (
+          <p className='success rounded-r-md border-l-8 border-l-red-500 bg-white py-1 align-middle font-medium text-red-500 dark:bg-gray-100 dark:text-red-500'>
+            {message}
+          </p>
+        )}
+      </div>
 
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
             Your email
           </label>
           <input
@@ -84,8 +85,7 @@ const PasswordRecovery = () => {
         <div className='mt-6'>
           <button
             type='submit'
-            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
-          >
+            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700 lg:text-lg'>
             Submit
           </button>
         </div>

@@ -18,7 +18,7 @@ const About = () => {
     <section className='bg-slate-100 dark:bg-gray-900'>
       <div className='mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-6 lg:pt-16'>
         <div className='mx-auto mb-8 max-w-screen-sm lg:mb-8'>
-          <h2 className='mb-4 text-4xl font-extrabold tracking-tight dark:text-gray-200 text-gray-900'>
+          <h2 className='mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200'>
             Hi There!
           </h2>
           <p className='font-light text-gray-900 dark:text-gray-200 sm:text-xl'>
@@ -44,8 +44,7 @@ const About = () => {
               <li>
                 <a
                   href='#'
-                  className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'
-                ></a>
+                  className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'></a>
               </li>
             </ul>
           </div>
@@ -85,20 +84,18 @@ const About = () => {
                 onClick={handleTab1}
                 className={
                   activeTab === 'tab1'
-                    ? 'border-b-2 px-2 py-1 border-violet-500 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
-                    : 'border-b-2 p-2 border-gray-300 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
-                }
-              >
+                    ? 'border-b-2 border-violet-500 px-2 py-1 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
+                    : 'border-b-2 border-gray-300 p-2 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                }>
                 Front-End
               </button>
               <button
                 onClick={handleTab2}
                 className={
                   activeTab === 'tab2'
-                    ? 'border-b-2 px-2 py-1 text-gray-900 dark:text-gray-200 border-violet-500 md:border-l-2 md:border-b-0 md:py-3'
-                    : 'border-b-2 p-2 border-gray-300 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
-                }
-              >
+                    ? 'border-b-2 border-violet-500 px-2 py-1 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
+                    : 'border-b-2 border-gray-300 p-2 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                }>
                 Back-End
               </button>
             </div>
@@ -110,8 +107,7 @@ const About = () => {
                     activeTab === 'tab1'
                       ? 'flex flex-col items-center justify-center space-y-3 md:items-start md:justify-start'
                       : 'hidden'
-                  }
-                >
+                  }>
                   <p className='text-5xl'> {list.icon}</p>
 
                   <h5 className='text-xl font-semibold lg:text-3xl'>
@@ -128,8 +124,7 @@ const About = () => {
                     activeTab === 'tab2'
                       ? 'flex flex-col items-center justify-center space-y-3 md:items-start md:justify-start'
                       : 'hidden'
-                  }
-                >
+                  }>
                   <p className='text-5xl'>{list.icon}</p>
                   <h5 className='text-xl font-semibold'>{list.title}</h5>
                   <p className='lg:pr-32'>{list.description}</p>
