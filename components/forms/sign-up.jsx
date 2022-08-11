@@ -66,7 +66,7 @@ const SignUpForm = () => {
           Create an account
         </p>
         <Link href='/signin'>
-          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 dark:text-amber-500 lg:mx-auto lg:text-lg'>
+          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 dark:text-amber-500 lg:mx-auto'>
             Already have an account?
           </button>
         </Link>
@@ -81,7 +81,7 @@ const SignUpForm = () => {
 
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
             Name
           </label>
           <input
@@ -95,7 +95,7 @@ const SignUpForm = () => {
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
             Email
           </label>
           <input
@@ -109,7 +109,7 @@ const SignUpForm = () => {
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
             Password
           </label>
           <input
@@ -123,7 +123,7 @@ const SignUpForm = () => {
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
+          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
             Confirm password
           </label>
           <input
@@ -139,7 +139,7 @@ const SignUpForm = () => {
         <div className='mt-6'>
           <button
             type='submit'
-            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700 lg:text-lg'>
+            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
             Submit
           </button>
         </div>
