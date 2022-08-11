@@ -103,7 +103,7 @@ const SignUpForm = () => {
             name='email'
             value={email}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary xl:text-lg'
             placeholder='Your email'
             required
           />
@@ -117,7 +117,7 @@ const SignUpForm = () => {
             name='password'
             value={password}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg '
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary xl:text-lg'
             placeholder='Enter your password'
             required
           />
@@ -131,7 +131,7 @@ const SignUpForm = () => {
             name='confirmPassword'
             value={confirmPassword}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg '
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary xl:text-lg'
             placeholder='Confirm your password'
             required
           />

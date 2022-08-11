@@ -101,7 +101,7 @@ const SignInForm = () => {
             name='email'
             value={email}
             onChange={handleChange}
-            className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg'
+            className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary xl:text-lg'
             placeholder='Your email'
             required
           />
@@ -116,7 +116,7 @@ const SignInForm = () => {
             name='password'
             value={password}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg '
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary xl:text-lg'
             placeholder='Your password'
             required
           />
