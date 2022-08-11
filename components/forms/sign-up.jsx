@@ -5,6 +5,7 @@ import {
 } from '../../utils/firebase.utils';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const defaultFormFields = {
   displayName: '',
@@ -17,6 +18,7 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
   const [errorMessage, setErrorMessage] = useState('');
+  const router = useRouter();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -38,9 +40,15 @@ const SignUpForm = () => {
 
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
+
+      if (user) {
+        router.push('/profile');
+      }
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
         setErrorMessage('Cannot create user! Email already in use.');
+      } else {
+        console.log('user creation encountered an error', error);
       }
     }
   };
@@ -70,6 +78,7 @@ const SignUpForm = () => {
           </p>
         )}
       </div>
+
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
           <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100 lg:text-lg'>
@@ -77,11 +86,10 @@ const SignUpForm = () => {
           </label>
           <input
             type='text'
-            id='displayName'
             name='displayName'
             value={displayName}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary lg:text-lg'
             placeholder='Enter your name here'
             required
           />
@@ -92,11 +100,10 @@ const SignUpForm = () => {
           </label>
           <input
             type='email'
-            id='email'
             name='email'
             value={email}
             onChange={handleChange}
-            className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg'
             placeholder='Your email'
             required
           />
@@ -107,12 +114,11 @@ const SignUpForm = () => {
           </label>
           <input
             type='password'
-            id='password'
             name='password'
             value={password}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary '
-            placeholder='Leave your message'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg '
+            placeholder='Enter your password'
             required
           />
         </div>
@@ -122,11 +128,10 @@ const SignUpForm = () => {
           </label>
           <input
             type='password'
-            id='confirmPassword'
             name='confirmPassword'
             value={confirmPassword}
             onChange={handleChange}
-            className='block w-full   rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary '
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg '
             placeholder='Confirm your password'
             required
           />

@@ -4,12 +4,13 @@ import Logo from '../images/logodev-white.svg';
 import { BsMoonStars } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
-//! Auth configuration !//
+//# Auth configuration //
 import { UserContext } from '../contexts/user.context';
 import { signOutUser } from '../utils/firebase.utils';
-//! Auth configuration !//
+//# Auth configuration //
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
   //# Theme Dark Mode #//
@@ -40,15 +41,18 @@ const Navbar = () => {
     }
   };
   //# Theme Dark #//
-  //! Auth configuration !//
+  //# Auth configuration //
   const { currentUser, setCurrentUser } = useContext(UserContext);
   // console.log(currentUser);
+
+  const router = useRouter();
 
   const signOutHandler = async () => {
     await signOutUser();
     setCurrentUser(null);
+    router.push('/signin');
   };
-  //! Auth configuration !//
+  //# Auth configuration //
 
   const [nav, setNav] = useState(false);
   const handleCLick = () => setNav(!nav);

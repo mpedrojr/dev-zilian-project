@@ -1,6 +1,6 @@
-import { FaReact, FaHtml5 } from 'react-icons/fa';
+import { FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
-import { SiCss3, SiTailwindcss } from 'react-icons/si';
+import { SiCss3, SiTailwindcss, SiFirebase } from 'react-icons/si';
 import { BsCodeSquare } from 'react-icons/bs';
 
 export const feature = [
@@ -16,11 +16,6 @@ export const feature = [
     icon: <IoLogoJavascript />,
   },
   {
-    name: 'HTML',
-    description: 'The best markup language for web development.',
-    icon: <FaHtml5 />,
-  },
-  {
     name: 'CSS',
     description: 'The best styling language for web development.',
     icon: <SiCss3 />,
@@ -30,6 +25,12 @@ export const feature = [
     description: 'The best CSS Framework for Web Development.',
     icon: <SiTailwindcss />,
   },
+  {
+    name: 'Firebase',
+    description: 'Popular cloud database.',
+    icon: <SiFirebase />,
+  },
+
   {
     name: 'Headless CMS',
     description: 'Best way to build user friendly content management.',

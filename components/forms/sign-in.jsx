@@ -7,6 +7,7 @@ import {
 } from '../../utils/firebase.utils';
 import { FiLogIn } from 'react-icons/fi';
 import { FaGoogle } from 'react-icons/fa';
+import { useRouter } from 'next/router';
 
 const defaultFormFields = {
   email: '',
@@ -17,8 +18,8 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const [errorMessage, setErrorMessage] = useState('');
-
   const { setCurrentUser } = useContext(UserContext);
+  const router = useRouter();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
@@ -28,6 +29,9 @@ const SignInForm = () => {
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
     setCurrentUser(user);
+    if (user) {
+      router.push('/profile');
+    }
   };
   //! Google !//
 
@@ -42,6 +46,10 @@ const SignInForm = () => {
 
       resetFormFields();
       setCurrentUser(user);
+
+      if (user) {
+        router.push('/profile');
+      }
     } catch (error) {
       switch (error.code) {
         case 'auth/wrong-password':
@@ -93,7 +101,7 @@ const SignInForm = () => {
             name='email'
             value={email}
             onChange={handleChange}
-            className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary'
+            className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg'
             placeholder='Your email'
             required
           />
@@ -108,7 +116,7 @@ const SignInForm = () => {
             name='password'
             value={password}
             onChange={handleChange}
-            className='block w-full   rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary '
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary  lg:text-lg '
             placeholder='Your password'
             required
           />
