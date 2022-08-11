@@ -77,7 +77,7 @@ const PasswordRecovery = () => {
             name='email'
             value={email}
             onChange={handleChange}
-            className='block w-full lg:text-lg rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary  placeholder-primary'
             placeholder='Your email'
             required
           />
