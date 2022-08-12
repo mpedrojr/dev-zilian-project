@@ -66,7 +66,7 @@ const SignUpForm = () => {
           Create an account
         </p>
         <Link href='/signin'>
-          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 dark:text-amber-500 lg:mx-auto'>
+          <button className='mt-4 max-w-2xl text-base font-medium text-blue-800 dark:text-amber-500 lg:mx-auto'>
             Already have an account?
           </button>
         </Link>
@@ -81,7 +81,7 @@ const SignUpForm = () => {
 
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
+          <label className='mb-1 block text-base font-medium text-primary dark:text-gray-100'>
             Name
           </label>
           <input
@@ -89,13 +89,13 @@ const SignUpForm = () => {
             name='displayName'
             value={displayName}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
             placeholder='Enter your name here'
             required
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
+          <label className='mb-1 block text-base font-medium text-primary dark:text-gray-100'>
             Email
           </label>
           <input
@@ -103,13 +103,13 @@ const SignUpForm = () => {
             name='email'
             value={email}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
             placeholder='Your email'
             required
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
+          <label className='mb-1 block text-base font-medium text-primary dark:text-gray-100'>
             Password
           </label>
           <input
@@ -117,13 +117,13 @@ const SignUpForm = () => {
             name='password'
             value={password}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
             placeholder='Enter your password'
             required
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
+          <label className='mb-1 block text-base font-medium text-primary dark:text-gray-100'>
             Confirm password
           </label>
           <input
@@ -131,7 +131,7 @@ const SignUpForm = () => {
             name='confirmPassword'
             value={confirmPassword}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
             placeholder='Confirm your password'
             required
           />
@@ -139,7 +139,7 @@ const SignUpForm = () => {
         <div className='mt-6'>
           <button
             type='submit'
-            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+            className='group relative flex w-full justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
             Submit
           </button>
         </div>

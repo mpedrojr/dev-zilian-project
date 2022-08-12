@@ -77,7 +77,7 @@ const SignInForm = () => {
           Sign In
         </p>
         <Link href='/signup'>
-          <button className='text-md mt-4 max-w-2xl font-medium text-blue-800 dark:text-amber-500 lg:mx-auto'>
+          <button className='mt-4 max-w-2xl text-base font-medium text-blue-800 dark:text-amber-500 lg:mx-auto'>
             Do not have an account?
           </button>
         </Link>
@@ -92,7 +92,7 @@ const SignInForm = () => {
 
       <form onSubmit={handleSubmit}>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
+          <label className='mb-1 block text-base font-medium text-primary dark:text-gray-100'>
             Your email
           </label>
           <input
@@ -101,13 +101,13 @@ const SignInForm = () => {
             name='email'
             value={email}
             onChange={handleChange}
-            className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary'
+            className='block w-full  rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
             placeholder='Your email'
             required
           />
         </div>
         <div className='mb-4'>
-          <label className='mb-1 block text-sm font-medium text-primary dark:text-gray-100'>
+          <label className='mb-1 block text-base font-medium text-primary dark:text-gray-100'>
             Your password
           </label>
           <input
@@ -116,14 +116,14 @@ const SignInForm = () => {
             name='password'
             value={password}
             onChange={handleChange}
-            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-sm text-primary placeholder-primary'
+            className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary'
             placeholder='Your password'
             required
           />
         </div>
         <div className='text-center'>
           <Link href='/forgotpassword'>
-            <button className='text-md max-w-2xl text-center font-medium text-blue-800 dark:text-amber-500 lg:mx-auto'>
+            <button className='max-w-2xl text-center text-base font-medium text-blue-800 dark:text-amber-500 lg:mx-auto'>
               Forgot your password?
             </button>
           </Link>
@@ -131,7 +131,7 @@ const SignInForm = () => {
         <div className='mt-6'>
           <button
             type='submit'
-            className='text-md group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+            className='group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
             <span>
               <FiLogIn />
             </span>
@@ -139,13 +139,15 @@ const SignInForm = () => {
           </button>
         </div>
         <div className='mt-2 flex w-full justify-center align-middle'>
-          <h3 className='font-medium text-blue-800 dark:text-gray-100'>or</h3>
+          <h3 className='text-base font-medium text-blue-800 dark:text-gray-100'>
+            or
+          </h3>
         </div>
         <div className='mt-2'>
           <button
             type='button'
             onClick={signInWithGoogle}
-            className='text-md group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+            className='group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
             <span>
               <FaGoogle />
             </span>
