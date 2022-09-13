@@ -3,6 +3,9 @@ import {
   getAuth,
   signInWithPopup,
   GoogleAuthProvider,
+  GithubAuthProvider,
+  FacebookAuthProvider,
+  TwitterAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -24,19 +27,40 @@ const firebaseConfig = {
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 
+//? Google
 const googleProvider = new GoogleAuthProvider();
 
 googleProvider.setCustomParameters({
   prompt: 'select_account',
 });
 
-export const auth = getAuth();
-
 export const signInWithGooglePopup = () =>
   signInWithPopup(auth, googleProvider);
 // export const signInWithGoogleRedirect = () =>
 //   signInWithRedirect(auth, googleProvider);
+//? Google
+//? Github
+const githubProvider = new GithubAuthProvider();
 
+githubProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
+export const signInWithGithub = () => signInWithPopup(auth, githubProvider);
+//? Github
+//? Facebook
+const facebookProvider = new FacebookAuthProvider();
+
+facebookProvider.setCustomParameters({
+  prompt: 'select_account',
+});
+
+export const signInWithFacebook = () => signInWithPopup(auth, facebookProvider);
+//? Facebook
+//?Twitter
+//?Twitter
+
+export const auth = getAuth();
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (

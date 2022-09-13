@@ -3,8 +3,11 @@ import { UserContext } from '../../contexts/user.context';
 import Link from 'next/link';
 import {
   signInWithGooglePopup,
+  signInWithGithub,
+  signInWithFacebook,
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase.utils';
+import { BsGithub, BsFacebook } from 'react-icons/bs';
 import { FiLogIn } from 'react-icons/fi';
 import { FaGoogle } from 'react-icons/fa';
 import { useRouter } from 'next/router';
@@ -25,7 +28,7 @@ const SignInForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  //! Google !//
+  //* Google !//
   const signInWithGoogle = async () => {
     const { user } = await signInWithGooglePopup();
     setCurrentUser(user);
@@ -33,7 +36,35 @@ const SignInForm = () => {
       router.push('/profile');
     }
   };
-  //! Google !//
+  //* Google !//
+  //* Github //
+  const signInWithGithubApp = async () => {
+    try {
+      const { user } = await signInWithGithub();
+      setCurrentUser(user);
+      if (user) {
+        router.push('/profile');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //* Github //
+  //* FaceBook //
+  const signInWithFacebookApp = async () => {
+    try {
+      const { user } = await signInWithFacebook();
+      setCurrentUser(user);
+      if (user) {
+        router.push('/profile');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  //* FaceBook //
+  //* Twitter //
+  //* Twitter //
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -138,23 +169,41 @@ const SignInForm = () => {
             <span className='ml-2'>Sign in</span>
           </button>
         </div>
-        <div className='mt-2 flex w-full justify-center align-middle'>
-          <h3 className='text-base font-medium text-blue-800 dark:text-gray-100'>
-            or
+      </form>
+      <div>
+      <div className='mb-6 flex w-full justify-center align-middle'>
+          <h3 className='text-xl font-medium text-blue-800 dark:text-gray-100'>
+            OR
           </h3>
         </div>
-        <div className='mt-2'>
-          <button
-            type='button'
-            onClick={signInWithGoogle}
-            className='group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
-            <span>
-              <FaGoogle />
-            </span>
-            <span className='ml-2'>Continue with Google</span>
-          </button>
-        </div>
-      </form>
+        <button
+          type='button'
+          onClick={signInWithGoogle}
+          className='group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+          <span>
+            <FaGoogle />
+          </span>
+          <span className='ml-2'>Continue with Google</span>
+        </button>
+        <button
+          type='button'
+          onClick={signInWithGithubApp}
+          className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+          <span>
+            <BsGithub className='h-6 w-6' />
+          </span>
+          <span className='ml-2'>Continue with Github</span>
+        </button>
+        <button
+          type='button'
+          onClick={signInWithFacebookApp}
+          className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+          <span>
+            <BsFacebook className='h-6 w-6' />
+          </span>
+          <span className='ml-2'>Continue with Facebook</span>
+        </button>
+      </div>
     </div>
   );
 };
