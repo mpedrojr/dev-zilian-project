@@ -1,8 +1,23 @@
 import Link from 'next/link';
-import React from 'react';
+import {useEffect} from 'react';
 import ChangePassword from '../components/forms/ChangePassowrd';
+import { useRouter } from 'next/router';
+import { useAuth } from '../contexts/user.context';
 
 const Profile = () => {
+
+  const router = useRouter();
+  const { currentUser } = useAuth();
+
+  useEffect(() => {
+    if (currentUser === null) {
+      router.push('/protectedcontent')
+    }
+  },[])
+
+
+
+
   return (
     <section className='mx-auto h-screen bg-gray-100 text-white dark:bg-gray-900'>
       <div className='max-w-screen mx-auto px-4 pt-12 lg:flex lg:items-center lg:pt-32'>

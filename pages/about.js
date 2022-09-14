@@ -1,10 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import MyPhoto from '../images/devzilian_me.png';
 import NucampLogo from '../images/nucamplogo.png';
 import { front, back } from '../data/about-data';
+import { useAuth } from '../contexts/user.context';
+import { useRouter } from 'next/router';
 
 const About = () => {
+  const { currentUser } = useAuth();
+  const router = useRouter();
+  useEffect(() => {
+    if (currentUser === null) {
+      router.push('/protectedcontent');
+    }
+  }, []);
+
   const [activeTab, setActiveTab] = useState('tab1');
 
   const handleTab1 = () => {
