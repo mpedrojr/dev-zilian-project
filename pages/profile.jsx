@@ -1,28 +1,27 @@
 import Link from 'next/link';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import ChangePassword from '../components/forms/ChangePassowrd';
 import { useRouter } from 'next/router';
 import { useAuth } from '../contexts/user.context';
 
-const Profile = () => {
 
+const Profile = () => {
   const router = useRouter();
   const { currentUser } = useAuth();
 
   useEffect(() => {
     if (currentUser === null) {
-      router.push('/protectedcontent')
-    }
-  },[])
-
-
-
+      router.push('/protectedcontent');
+    } 
+  }, []);
 
   return (
     <section className='mx-auto h-screen bg-gray-100 text-white dark:bg-gray-900'>
       <div className='max-w-screen mx-auto px-4 pt-12 lg:flex lg:items-center lg:pt-32'>
         <div className='mx-auto max-w-3xl text-center'>
-          <p className='mx-auto max-w-xl text-lg text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-relaxed'></p>
+          <p className='mx-auto mb-8 max-w-xl text-lg text-gray-900 dark:text-gray-100 sm:text-xl sm:leading-relaxed'>
+            {currentUser ? `${currentUser.displayName}` : null}
+          </p>
           <h1 className='bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl'>
             <span className='block'>Welcome to </span>
             <span className='block'>your profile page.</span>

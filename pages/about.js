@@ -9,11 +9,15 @@ import { useRouter } from 'next/router';
 const About = () => {
   const { currentUser } = useAuth();
   const router = useRouter();
+
   useEffect(() => {
-    if (currentUser === null) {
+    if (currentUser) {
+      console.log('signed in');
+    } else if (currentUser === null) {
       router.push('/protectedcontent');
     }
-  }, []);
+  }, [currentUser]);
+
 
   const [activeTab, setActiveTab] = useState('tab1');
 
