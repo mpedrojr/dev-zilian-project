@@ -1,54 +1,48 @@
 import { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../../utils/firebase.utils';
-
 const defaultFormFields = {
-  displayName: '',
+  name: '',
   email: '',
   message: '',
 };
-
 const ContactForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
-  const { displayName, email, message } = formFields;
-  const [confirmation, setConfirmation] = useState('');
-
+  const { name, email, message } = formFields;
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const docRef = await addDoc(collection(db, 'contact'), {
-      displayName: displayName,
-      email: email,
-      message: message,
-    });
-    resetFormFields();
-    setConfirmation('Form submitted successfully.');
-    console.log('Document written with ID: ', docRef.id);
+  const create = async (e) => {
+    e.preventDefault();
+    try {
+      const body = { name, email, message };
+      await fetch('/api/create', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+    } catch (error) {
+      throw new Error(error);
+    }
   };
-
+  const onSubmit = async (data) => {
+    try {
+      create(data);
+      resetFormFields();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormFields({ ...formFields, [name]: value });
   };
-
   return (
     <section className='mx-auto'>
       <div className='py-12'>
         <div className='mx-auto max-w-lg px-4 sm:px-6 lg:px-8'>
           <div className='text-center'>
-            {confirmation && (
-              <p className='success font-medium text-amber-800 dark:text-gray-200'>
-                {confirmation}
-              </p>
-            )}
+            <p className='success font-medium text-amber-800 dark:text-gray-200'></p>
           </div>
-
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={onSubmit}>
             <div className='mb-6'>
               <label className='mb-2 block text-base font-medium text-primary dark:text-gray-200'>
                 Name*
@@ -56,8 +50,8 @@ const ContactForm = () => {
               <input
                 type='name'
                 id='name'
-                name='displayName'
-                value={displayName}
+                name='name'
+                value={name}
                 onChange={handleChange}
                 className='block w-full rounded-lg border border-gray-600 bg-gray-50 p-2.5 text-base text-primary placeholder-primary dark:border-amber-700'
                 placeholder='Enter your name here'
@@ -109,5 +103,4 @@ const ContactForm = () => {
     </section>
   );
 };
-
 export default ContactForm;
