@@ -1,22 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import MyPhoto from '../images/devzilian_me.png';
 import NucampLogo from '../images/nucamplogo.png';
 import { front, back } from '../data/about-data';
-import { useAuth } from '../contexts/user.context';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 const About = () => {
-  const { currentUser } = useAuth();
-  const router = useRouter();
+  
+  // const router = useRouter();
 
-  useEffect(() => {
-    if (currentUser) {
-      console.log('signed in');
-    } else if (currentUser === null) {
-      router.push('/protectedcontent');
-    }
-  }, [currentUser]);
+  
 
 
   const [activeTab, setActiveTab] = useState('tab1');

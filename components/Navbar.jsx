@@ -42,14 +42,14 @@ const Navbar = () => {
   };
   //# Theme Dark #//
   //# Auth configuration //
-  const { currentUser, setCurrentUser } = useContext(UserContext);
+  
   // console.log(currentUser);
 
   const router = useRouter();
 
   const signOutHandler = async () => {
     await signOutUser();
-    setCurrentUser(null);
+   
     router.push('/signin');
   };
   //# Auth configuration //
@@ -104,7 +104,7 @@ const Navbar = () => {
         <div className='flex md:hidden'>{renderThemeChanger()}</div>
         <div className='hidden items-center md:flex'>
           <div className='mr-6 md:flex lg:mr-12'>{renderThemeChanger()}</div>
-          {currentUser ? (
+          {/* {session ? (
             <button
               type='button'
               onClick={signOutHandler}
@@ -127,7 +127,7 @@ const Navbar = () => {
                 </button>
               </Link>
             </div>
-          )}
+          )} */}
         </div>
       </div>
       <div className='md:hidden'>
@@ -138,7 +138,7 @@ const Navbar = () => {
               : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 border-b bg-white py-8 pb-20 font-secondary font-bold text-primary drop-shadow-md dark:border-b-gray-200 dark:bg-gray-900 dark:text-gray-200 sm:w-auto sm:self-center'
           }>
           <div className='mb-4 ml-6'>
-            {currentUser ? (
+            {/* {session ? (
               <button
                 type='button'
                 onClick={signOutHandler}
@@ -161,7 +161,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
-            )}
+            )} */}
           </div>
 
           <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>

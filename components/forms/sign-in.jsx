@@ -1,16 +1,10 @@
-import { useContext, useState } from 'react';
-import { UserContext } from '../../contexts/user.context';
+import { useState } from 'react';
 import Link from 'next/link';
-import {
-  signInWithGooglePopup,
-  signInWithGithub,
-  signInWithFacebook,
-  signInAuthUserWithEmailAndPassword,
-} from '../../utils/firebase.utils';
+
 import { BsGithub, BsFacebook } from 'react-icons/bs';
 import { FiLogIn } from 'react-icons/fi';
 import { FaGoogle } from 'react-icons/fa';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 const defaultFormFields = {
   email: '',
@@ -21,47 +15,21 @@ const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
   const [errorMessage, setErrorMessage] = useState('');
-  const { setCurrentUser } = useContext(UserContext);
-  const router = useRouter();
+
+  // const router = useRouter();
 
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   //* Google !//
-  const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    setCurrentUser(user);
-    if (user) {
-      router.push('/profile');
-    }
-  };
+
   //* Google !//
   //* Github //
-  const signInWithGithubApp = async () => {
-    try {
-      const { user } = await signInWithGithub();
-      setCurrentUser(user);
-      if (user) {
-        router.push('/profile');
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   //* Github //
   //* FaceBook //
-  const signInWithFacebookApp = async () => {
-    try {
-      const { user } = await signInWithFacebook();
-      setCurrentUser(user);
-      if (user) {
-        router.push('/profile');
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   //* FaceBook //
   //* Twitter //
   //* Twitter //
@@ -70,17 +38,7 @@ const SignInForm = () => {
     event.preventDefault();
 
     try {
-      const { user } = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-
       resetFormFields();
-      setCurrentUser(user);
-
-      if (user) {
-        router.push('/profile');
-      }
     } catch (error) {
       switch (error.code) {
         case 'auth/wrong-password':
@@ -171,14 +129,13 @@ const SignInForm = () => {
         </div>
       </form>
       <div>
-      <div className='mb-6 flex w-full justify-center align-middle'>
+        <div className='mb-6 flex w-full justify-center align-middle'>
           <h3 className='text-xl font-medium text-blue-800 dark:text-gray-100'>
             OR
           </h3>
         </div>
         <button
           type='button'
-          onClick={signInWithGoogle}
           className='group relative flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
           <span>
             <FaGoogle />
@@ -187,7 +144,6 @@ const SignInForm = () => {
         </button>
         <button
           type='button'
-          onClick={signInWithGithubApp}
           className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
           <span>
             <BsGithub className='h-6 w-6' />
@@ -196,7 +152,6 @@ const SignInForm = () => {
         </button>
         <button
           type='button'
-          onClick={signInWithFacebookApp}
           className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
           <span>
             <BsFacebook className='h-6 w-6' />
