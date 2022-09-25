@@ -5,7 +5,7 @@ import { BsMoonStars } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 //# Auth configuration //
-import { UserContext } from '../contexts/user.context';
+// import { UserContext } from '../../contexts/user.context';
 import { signOutUser } from '../utils/firebase.utils';
 //# Auth configuration //
 import { FaBars, FaTimes } from 'react-icons/fa';

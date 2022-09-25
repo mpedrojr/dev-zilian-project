@@ -19,11 +19,11 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/home/Github-cta.jsx",
-    "components/home/Blog-cta.jsx",
-    "components/home/Features.jsx",
-    "components/home/HeroHome.jsx",
-    "components/Footer.jsx"
+    "src/components/home/Github-cta.jsx",
+    "src/components/home/Blog-cta.jsx",
+    "src/components/home/Features.jsx",
+    "src/components/home/HeroHome.jsx",
+    "src/components/Footer.jsx"
   ],
   "exclude": ["node_modules"]
 }
