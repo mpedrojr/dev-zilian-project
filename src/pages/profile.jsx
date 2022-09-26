@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import ChangePassword from '../components/forms/ChangePassowrd';
 import { getSession } from 'next-auth/react';
 // import { useRouter } from 'next/router';
 const Profile = () => {
@@ -37,7 +36,7 @@ const Profile = () => {
           </div>
           {/* Section 2 */}
           <div className='mt-10'>
-            <ChangePassword />
+            {/* Put any form here */}
           </div>
         </div>
       </div>

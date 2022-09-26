@@ -1,8 +1,6 @@
 import { FC, useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { FaGoogle } from 'react-icons/fa';
 import {
-  useSession,
   getProviders,
   signIn,
   ClientSafeProvider,
@@ -15,7 +13,6 @@ const defaultFormFields = {
 const SignIn: FC = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email } = formFields;
-  const router = useRouter();
   const [providers, setproviders] = useState<Record<
     LiteralUnion<BuiltInProviderType, string>,
     ClientSafeProvider
@@ -27,10 +24,7 @@ const SignIn: FC = () => {
     };
     setTheProviders();
   }, []);
-  const { data: session, status } = useSession();
-  if (session) {
-    router.push('/');
-  }
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };

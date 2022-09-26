@@ -3,9 +3,7 @@ import EmailProvider from "next-auth/providers/email";
 import GoogleProvider from 'next-auth/providers/google';
 // Prisma adapter for NextAuth, optional and can be removed
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
-// import { prisma } from '../../../server/db/client';
 import { PrismaClient } from '@prisma/client';
-
 
 const prisma = new PrismaClient();
 export const authOptions = {
@@ -16,6 +14,9 @@ export const authOptions = {
         session.user.id = user.id;
       }
       return session;
+    },
+    async redirect(url, baseUrl) {
+      return '/profile';
     },
   },
 
