@@ -5,7 +5,7 @@ import { BsMoonStars } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 //# Auth configuration //
-// import { UserContext } from '../../contexts/user.context';
+import { useSession, signOut } from 'next-auth/react';
 import { signOutUser } from '../utils/firebase.utils';
 //# Auth configuration //
 import { FaBars, FaTimes } from 'react-icons/fa';
@@ -13,6 +13,11 @@ import { FiLogIn, FiLogOut } from 'react-icons/fi';
 import { useRouter } from 'next/router';
 
 const Navbar = () => {
+  const router = useRouter();
+  //# Auth configuration //
+  const { data: session } = useSession();
+  //# Auth configuration //
+
   //# Theme Dark Mode #//
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -41,18 +46,6 @@ const Navbar = () => {
     }
   };
   //# Theme Dark #//
-  //# Auth configuration //
-  
-  // console.log(currentUser);
-
-  const router = useRouter();
-
-  const signOutHandler = async () => {
-    await signOutUser();
-   
-    router.push('/signin');
-  };
-  //# Auth configuration //
 
   const [nav, setNav] = useState(false);
   const handleCLick = () => setNav(!nav);
@@ -104,7 +97,7 @@ const Navbar = () => {
         <div className='flex md:hidden'>{renderThemeChanger()}</div>
         <div className='hidden items-center md:flex'>
           <div className='mr-6 md:flex lg:mr-12'>{renderThemeChanger()}</div>
-          {/* {session ? (
+          {session ? (
             <button
               type='button'
               onClick={signOutHandler}
@@ -127,7 +120,7 @@ const Navbar = () => {
                 </button>
               </Link>
             </div>
-          )} */}
+          )}
         </div>
       </div>
       <div className='md:hidden'>
@@ -138,7 +131,7 @@ const Navbar = () => {
               : 'absolute left-0 right-0 z-40 mt-4 flex flex-col items-center space-y-6 border-b bg-white py-8 pb-20 font-secondary font-bold text-primary drop-shadow-md dark:border-b-gray-200 dark:bg-gray-900 dark:text-gray-200 sm:w-auto sm:self-center'
           }>
           <div className='mb-4 ml-6'>
-            {/* {session ? (
+            {session ? (
               <button
                 type='button'
                 onClick={signOutHandler}
@@ -161,7 +154,7 @@ const Navbar = () => {
                   </button>
                 </Link>
               </div>
-            )} */}
+            )}
           </div>
 
           <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
