@@ -6,14 +6,11 @@ import { FiSun } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 //# Auth configuration //
 import { useSession, signOut } from 'next-auth/react';
-import { signOutUser } from '../utils/firebase.utils';
 //# Auth configuration //
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
-import { useRouter } from 'next/router';
 
 const Navbar = () => {
-  const router = useRouter();
   //# Auth configuration //
   const { data: session } = useSession();
   //# Auth configuration //
@@ -100,7 +97,7 @@ const Navbar = () => {
           {session ? (
             <button
               type='button'
-              onClick={signOutHandler}
+              onClick={() => signOut()}
               className='flex items-center font-bold text-gray-100'>
               <span className='mr-4 hidden lg:inline'>LOGOUT</span>
               <span className='inline'>
@@ -134,7 +131,7 @@ const Navbar = () => {
             {session ? (
               <button
                 type='button'
-                onClick={signOutHandler}
+                onClick={() => signOut()}
                 className='flex items-center font-bold text-gray-900 dark:text-gray-100'>
                 <span className='mr-4 inline'>LOGOUT</span>
                 <span className='inline'>

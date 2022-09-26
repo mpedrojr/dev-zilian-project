@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import ChangePassword from '../components/forms/ChangePassowrd';
-import { getSession, useSession } from 'next-auth/react';
+import { getSession } from 'next-auth/react';
 // import { useRouter } from 'next/router';
 const Profile = () => {
   return (

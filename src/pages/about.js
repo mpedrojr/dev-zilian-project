@@ -3,15 +3,9 @@ import Image from 'next/image';
 import MyPhoto from '../images/devzilian_me.png';
 import NucampLogo from '../images/nucamplogo.png';
 import { front, back } from '../data/about-data';
-// import { useRouter } from 'next/router';
+import { getSession } from 'next-auth/react';
 
 const About = () => {
-  
-  // const router = useRouter();
-
-  
-
-
   const [activeTab, setActiveTab] = useState('tab1');
 
   const handleTab1 = () => {
@@ -143,6 +137,19 @@ const About = () => {
       </div>
     </section>
   );
+};
+
+export const getServerSideProps = async (context) => {
+  const session = await getSession(context);
+  if (!session)
+    return {
+      redirect: {
+        destination: '/signin',
+      },
+    };
+  return {
+    props: { session },
+  };
 };
 
 export default About;
