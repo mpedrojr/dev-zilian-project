@@ -16,7 +16,7 @@ const SignIn: FC = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email } = formFields;
 
-  const [providers, setproviders] = useState<Record<
+  const [providers, setProviders] = useState<Record<
     LiteralUnion<BuiltInProviderType, string>,
     ClientSafeProvider
   > | null>();
@@ -24,7 +24,7 @@ const SignIn: FC = () => {
   useEffect(() => {
     const setTheProviders = async () => {
       const setupProviders = await getProviders();
-      setproviders(setupProviders);
+      setProviders(setupProviders);
     };
     setTheProviders();
   }, []);
