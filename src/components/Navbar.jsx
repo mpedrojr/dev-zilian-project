@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from '../images/logodev-white.svg';
 import { BsMoonStars } from 'react-icons/bs';

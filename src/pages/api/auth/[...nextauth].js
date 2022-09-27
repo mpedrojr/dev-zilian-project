@@ -15,7 +15,7 @@ export const authOptions = {
       }
       return session;
     },
-    async redirect(url, baseUrl) {
+    async redirect() {
       return '/profile';
     },
   },

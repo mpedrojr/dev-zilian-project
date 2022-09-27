@@ -1,6 +1,5 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
-// import { UserProvider } from '../../contexts/user.context';
 import { SessionProvider } from 'next-auth/react';
 
 const Layout = ({ children, session }) => {
