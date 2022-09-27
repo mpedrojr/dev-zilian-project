@@ -1,30 +1,36 @@
 // @ts-check
+import { z } from 'zod';
+
 /**
- * This file is included in `/next.config.mjs` which ensures the app isn't built with invalid env vars.
- * It has to be a `.mjs`-file to be imported there.
+ * Specify your server-side environment variables schema here.
+ * This way you can ensure the app isn't built with invalid env vars.
  */
- import { serverSchema } from "./schema.mjs";
- import { env as clientEnv, formatErrors } from "./client.mjs";
- 
- const _serverEnv = serverSchema.safeParse(process.env);
- 
- if (_serverEnv.success === false) {
-   console.error(
-     "❌ Invalid environment variables:\n",
-     ...formatErrors(_serverEnv.error.format()),
-   );
-   throw new Error("Invalid environment variables");
- }
- 
- /**
-  * Validate that server-side environment variables are not exposed to the client.
-  */
- for (let key of Object.keys(_serverEnv.data)) {
-   if (key.startsWith("NEXT_PUBLIC_")) {
-     console.warn("❌ You are exposing a server-side env-variable:", key);
- 
-     throw new Error("You are exposing a server-side env-variable");
-   }
- }
- 
- export const env = { ..._serverEnv.data, ...clientEnv };
+export const serverSchema = z.object({
+  DATABASE_URL: z.string().url(),
+  NODE_ENV: z.enum(['development', 'test', 'production']),
+  NEXTAUTH_SECRET: z.string(),
+  NEXTAUTH_URL: z.string().url(),
+  DISCORD_CLIENT_ID: z.string(),
+  DISCORD_CLIENT_SECRET: z.string(),
+  GOOGLE_CLIENT_ID: z.string(),
+  GOOGLE_CLIENT_SECRET: z.string(),
+});
+
+/**
+ * Specify your client-side environment variables schema here.
+ * This way you can ensure the app isn't built with invalid env vars.
+ * To expose them to the client, prefix them with `NEXT_PUBLIC_`.
+ */
+export const clientSchema = z.object({
+  // NEXT_PUBLIC_BAR: z.string(),
+});
+
+/**
+ * You can't destruct `process.env` as a regular object, so you have to do
+ * it manually here. This is because Next.js evaluates this at build time,
+ * and only used environment variables are included in the build.
+ * @type {{ [k in keyof z.infer<typeof clientSchema>]: z.infer<typeof clientSchema>[k] | undefined }}
+ */
+export const clientEnv = {
+  // NEXT_PUBLIC_BAR: process.env.NEXT_PUBLIC_BAR,
+};
