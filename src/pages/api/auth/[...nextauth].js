@@ -118,7 +118,7 @@ export default NextAuth({
   // Events are useful for logging
   // https://next-auth.js.org/configuration/events
   events: {
-    signIn: ({ user, account, profile, isNewUser }) => {
+    signIn: ({ isNewUser }) => {
       console.log(`isNewUser: ${JSON.stringify(isNewUser)}`);
     },
     // updateUser({ user })
