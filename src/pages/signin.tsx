@@ -7,16 +7,20 @@ import {
   LiteralUnion,
 } from 'next-auth/react';
 import { BuiltInProviderType } from 'next-auth/providers';
+
 const defaultFormFields = {
   email: '',
 };
+
 const SignIn: FC = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email } = formFields;
+
   const [providers, setproviders] = useState<Record<
     LiteralUnion<BuiltInProviderType, string>,
     ClientSafeProvider
   > | null>();
+
   useEffect(() => {
     const setTheProviders = async () => {
       const setupProviders = await getProviders();
