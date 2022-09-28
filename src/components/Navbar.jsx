@@ -5,7 +5,7 @@ import { BsMoonStars } from 'react-icons/bs';
 import { FiSun } from 'react-icons/fi';
 import { useTheme } from 'next-themes';
 //# Auth configuration //
-import { useSession, signOut } from 'next-auth/react';
+import { useSession, signOut, signIn } from 'next-auth/react';
 //# Auth configuration //
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
@@ -108,7 +108,7 @@ const Navbar = () => {
             <div>
               <Link href='/signin'>
                 <button
-                  onClick={() => setNav(false)}
+                  onClick={() => signIn()}
                   className=' flex items-center font-bold text-white'>
                   <span className='mr-4 hidden lg:inline'>LOGIN</span>
                   <span className='inline'>
