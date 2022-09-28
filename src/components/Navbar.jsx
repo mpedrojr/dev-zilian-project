@@ -106,16 +106,14 @@ const Navbar = () => {
             </button>
           ) : (
             <div>
-              <Link href='/signin'>
-                <button
-                  onClick={() => signIn()}
-                  className=' flex items-center font-bold text-white'>
-                  <span className='mr-4 hidden lg:inline'>LOGIN</span>
-                  <span className='inline'>
-                    <FiLogIn />
-                  </span>
-                </button>
-              </Link>
+              <button
+                onClick={() => signIn()}
+                className=' flex items-center font-bold text-white'>
+                <span className='mr-4 hidden lg:inline'>LOGIN</span>
+                <span className='inline'>
+                  <FiLogIn />
+                </span>
+              </button>
             </div>
           )}
         </div>
