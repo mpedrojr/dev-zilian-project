@@ -24,6 +24,6 @@
     "src/components/home/Features.jsx",
     "src/components/home/HeroHome.jsx",
     "src/components/Footer.jsx"
-  ],
+, "src/pages/api/auth/[...nextauth].js"  ],
   "exclude": ["node_modules"]
 }
