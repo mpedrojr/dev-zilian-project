@@ -7,12 +7,14 @@ import {
   LiteralUnion,
 } from 'next-auth/react';
 import { BuiltInProviderType } from 'next-auth/providers';
+import { useRouter } from 'next/router';
 
 const defaultFormFields = {
   email: '',
 };
 
 const SignIn: FC = () => {
+  const router = useRouter();
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email } = formFields;
   const [providers, setProviders] = useState<Record<
@@ -38,6 +40,7 @@ const SignIn: FC = () => {
       if (!email) return false;
       await signIn('email', { email, redirect: false });
       resetFormFields();
+      router.push('/verify')
     } catch (error) {
       console.log(error);
     }

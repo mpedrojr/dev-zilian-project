@@ -1,10 +1,9 @@
 import NextAuth from 'next-auth';
-import EmailProvider from "next-auth/providers/email";
+import EmailProvider from 'next-auth/providers/email';
 import GoogleProvider from 'next-auth/providers/google';
 // Prisma adapter for NextAuth, optional and can be removed
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import prisma from '../../../lib/client';
-
 
 export const authOptions = {
   // Include user.id on session
@@ -20,7 +19,6 @@ export const authOptions = {
     },
   },
 
-
   // Configure one or more authentication providers
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -34,13 +32,21 @@ export const authOptions = {
         port: process.env.EMAIL_SERVER_PORT,
         auth: {
           user: process.env.EMAIL_SERVER_USER,
-          pass: process.env.EMAIL_SERVER_PASSWORD
-        }
+          pass: process.env.EMAIL_SERVER_PASSWORD,
+        },
       },
-      from: process.env.EMAIL_FROM
+      from: process.env.EMAIL_FROM,
     }),
     // ...add more providers here
   ],
   secret: process.env.NEXTAUTH_SECRET,
+
+  pages: {
+    // signIn: '/auth/signin',
+    // signOut: '/auth/signout',
+    // error: '/auth/error', // Error code passed in query string as ?error=
+    verifyRequest: '/pages/verify', //'/auth/verify-request', // (used for check email message)
+    // newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
+  },
 };
 export default NextAuth(authOptions);
