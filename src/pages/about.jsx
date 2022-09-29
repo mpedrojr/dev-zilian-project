@@ -109,9 +109,9 @@ const About = () => {
                       ? 'flex flex-col items-center justify-center space-y-3 md:items-start md:justify-start'
                       : 'hidden'
                   }>
-                  <p className='text-5xl'> {list.icon}</p>
+                  <p className='text-5xl'>{list.icon}</p>
 
-                  <h5 className='text-xl font-semibold lg:text-3xl'>
+                  <h5 className='text-xl font-semibold lg:text-2xl'>
                     {list.title}
                   </h5>
                   <p className='lg:pr-32'>{list.description}</p>
@@ -127,7 +127,7 @@ const About = () => {
                       : 'hidden'
                   }>
                   <p className='text-5xl'>{list.icon}</p>
-                  <h5 className='text-xl font-semibold'>{list.title}</h5>
+                  <h5 className='text-xl font-semibold lg:text-2xl'>{list.title}</h5>
                   <p className='lg:pr-32'>{list.description}</p>
                 </div>
               ))}

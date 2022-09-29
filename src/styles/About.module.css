@@ -9,23 +9,32 @@
   color: rgb(99, 156, 230);
 }
 .reactnative {
-  color: rgb(189, 214, 246);
+  color: rgb(94, 132, 209);
+}
+.nextjs {
+  color: rgb(94, 118, 147);
 }
 .javascript {
   color: rgb(224, 209, 9);
 }
-.html {
-  color: rgb(226, 101, 24);
+.typescript {
+  color: rgb(82, 138, 250);
 }
 .css {
-  color: rgb(18, 36, 154);
+  color: rgb(38, 77, 228);
 }
 .tailwind {
-  color: rgb(23, 66, 152);
+  color: rgb(52, 144, 220);
 }
 .node {
-  color: rgb(18, 120, 42);
+  color: rgb(104, 160, 99);
 }
 .mongo {
-  color: rgb(72, 68, 50);
+  color: rgb(12, 212, 91);
+}
+.html {
+  color: rgb(240, 101, 41);
+}
+.graphql {
+  color: rgb(229, 53, 171);
 }
