@@ -1,4 +1,5 @@
-import prisma  from '../../lib/prismadb';
+import prisma from '../../lib/client';
+
 export default async function handler(req, res) {
   const { name, email, message } = req.body;
   try {

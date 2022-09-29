@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { FaGoogle } from 'react-icons/fa';
+import { BsGithub } from 'react-icons/bs';
 import {
   getProviders,
   signIn,
@@ -101,16 +102,21 @@ const SignIn: FC = () => {
               </button>
             </>
           )}
-          {/* <button
+        {providers?.google && (
+          <>
+          <button
           type='button'
-          onClick={signInWithGithubApp}
+          onClick={() => signIn(providers.github.id)}
           className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
           <span>
             <BsGithub className='h-6 w-6' />
           </span>
           <span className='ml-2'>Continue with Github</span>
         </button>
-        <button
+        </>
+        )}
+
+        {/* <button
           type='button'
           onClick={signInWithFacebookApp}
           className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>

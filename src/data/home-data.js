@@ -1,6 +1,6 @@
 import { FaReact } from 'react-icons/fa';
 import { IoLogoJavascript } from 'react-icons/io';
-import { SiCss3, SiTailwindcss, SiFirebase } from 'react-icons/si';
+import { SiCss3, SiTailwindcss, SiMongodb } from 'react-icons/si';
 import { BsCodeSquare } from 'react-icons/bs';
 
 export const feature = [
@@ -26,9 +26,9 @@ export const feature = [
     icon: <SiTailwindcss />,
   },
   {
-    name: 'Firebase',
-    description: 'Popular cloud database.',
-    icon: <SiFirebase />,
+    name: 'MongoDB',
+    description: 'Best document-oriented database (NoSQL).',
+    icon: <SiMongodb />,
   },
 
   {
