@@ -5,8 +5,8 @@ import Lock from '../images/lock.png';
 const SignInRequired = () => {
   return (
     <section className='w-xl mx-auto my-auto bg-white dark:bg-gray-900'>
-      <div className='flex flex-col items-center justify-center space-y-4 pt-12 pb-28 lg:pb-44'>
-        <div className=''>
+      <div className='flex flex-col items-center justify-center space-y-4 pt-32 pb-28 lg:pb-44'>
+        <div>
           <Image src={Lock} alt='dog' />
         </div>
         <h1 className='text-4xl font-bold text-amber-500 lg:text-5xl'>
