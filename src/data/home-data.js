@@ -10,7 +10,7 @@ export const frontHome = [
     icon: <FaReact className={styles.react} />,
     title: 'React',
     description:
-      'React is the most popular library/Framework for Web Development.',
+      'React is the most popular javascript library/Framework for Web Development.',
   },
   {
     icon: <TbBrandNextjs className={styles.nextjs} />,
@@ -28,7 +28,7 @@ export const frontHome = [
     icon: <SiTypescript className={styles.typescript} />,
     title: 'TypeScript',
     description:
-      'HyperText Markup Language (HTML) is the basic scripting language used by web browsers to render pages on the world wide web.',
+      'TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.',
   },
   {
     icon: <SiCss3 className={styles.css} />,
@@ -40,7 +40,7 @@ export const frontHome = [
     icon: <SiTailwindcss className={styles.tailwind} />,
     title: 'Tailwind CSS',
     description:
-      'Best CSS framework.',
+      'Tailwind CSS works by scanning all of your HTML files, JavaScript components, and any other templates for class names, generating the corresponding styles and then writing them to a static CSS file.',
   },
 ];
 
@@ -66,6 +66,6 @@ export const backHome = [
     icon: <SiGraphql className={styles.graphql} />,
     title: 'GraphQL',
     description:
-      'Prisma unlocks a new level of developer experience when working with databases thanks to its intuitive data model, automated migrations, type-safety & auto-completion.',
+      'GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data. ',
   },
 ];

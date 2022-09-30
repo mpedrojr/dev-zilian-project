@@ -1,5 +1,5 @@
 import { FC, useState, useEffect } from 'react';
-import { FaGoogle } from 'react-icons/fa';
+import { FaGoogle, FaTwitter } from 'react-icons/fa';
 import { BsGithub } from 'react-icons/bs';
 import {
   getProviders,
@@ -41,7 +41,7 @@ const SignIn: FC = () => {
       if (!email) return false;
       await signIn('email', { email, redirect: false });
       resetFormFields();
-      router.push('/verify')
+      router.push('/verify');
     } catch (error) {
       console.log(error);
     }
@@ -102,29 +102,32 @@ const SignIn: FC = () => {
               </button>
             </>
           )}
-        {providers?.google && (
-          <>
-          <button
-          type='button'
-          onClick={() => signIn(providers.github.id)}
-          className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
-          <span>
-            <BsGithub className='h-6 w-6' />
-          </span>
-          <span className='ml-2'>Continue with Github</span>
-        </button>
-        </>
-        )}
-
-        {/* <button
-          type='button'
-          onClick={signInWithFacebookApp}
-          className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
-          <span>
-            <BsFacebook className='h-6 w-6' />
-          </span>
-          <span className='ml-2'>Continue with Facebook</span>
-        </button> */}
+          {providers?.google && (
+            <>
+              <button
+                type='button'
+                onClick={() => signIn(providers.github.id)}
+                className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+                <span>
+                  <BsGithub className='h-6 w-6' />
+                </span>
+                <span className='ml-2'>Continue with Github</span>
+              </button>
+            </>
+          )}
+          {providers?.twitter && (
+            <>
+              <button
+                type='button'
+                onClick={() => signIn(providers.twitter.id)}
+                className='group relative mt-6 flex w-full items-center justify-center rounded-md border border-transparent bg-primary py-2 px-4 text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:bg-amber-700'>
+                <span>
+                  <FaTwitter className='h-6 w-6' />
+                </span>
+                <span className='ml-2'>Continue with Twitter</span>
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

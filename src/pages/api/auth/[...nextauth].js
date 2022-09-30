@@ -1,7 +1,9 @@
 import NextAuth from 'next-auth';
 import EmailProvider from 'next-auth/providers/email';
 import GoogleProvider from 'next-auth/providers/google';
-import GitHubProvider from "next-auth/providers/github";
+import GitHubProvider from 'next-auth/providers/github';
+import TwitterProvider from 'next-auth/providers/twitter';
+// import FacebookProvider from "next-auth/providers/facebook";
 
 // Prisma adapter for NextAuth, optional and can be removed
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
@@ -42,6 +44,11 @@ export const authOptions = {
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+    }),
+    TwitterProvider({
+      clientId: process.env.TWITTER_CLIENT_ID,
+      clientSecret: process.env.TWITTER_CLIENT_SECRET,
+      version: "2.0", // opt-in to Twitter OAuth 2.0
     }),
     // ...add more providers here
   ],
