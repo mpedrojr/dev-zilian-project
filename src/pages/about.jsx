@@ -85,8 +85,8 @@ const About = () => {
                 onClick={handleTab1}
                 className={
                   activeTab === 'tab1'
-                    ? 'border-b-2 border-violet-500 px-2 py-1 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
-                    : 'border-b-2 border-gray-300 p-2 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                    ? 'border-b-2 border-gray-300 p-2 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                    : 'border-b-2 border-violet-500 px-2 py-1 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
                 }>
                 Front-End
               </button>
@@ -94,8 +94,8 @@ const About = () => {
                 onClick={handleTab2}
                 className={
                   activeTab === 'tab2'
-                    ? 'border-b-2 border-violet-500 px-2 py-1 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
-                    : 'border-b-2 border-gray-300 p-2 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                    ? 'border-b-2 border-gray-300 p-2 text-gray-500 md:border-l-2 md:border-b-0 md:py-3'
+                    : 'border-b-2 border-violet-500 px-2 py-1 text-gray-900 dark:text-gray-200 md:border-l-2 md:border-b-0 md:py-3'
                 }>
                 Back-End
               </button>
@@ -127,7 +127,9 @@ const About = () => {
                       : 'hidden'
                   }>
                   <p className='text-5xl'>{list.icon}</p>
-                  <h5 className='text-xl font-semibold lg:text-2xl'>{list.title}</h5>
+                  <h5 className='text-xl font-semibold lg:text-2xl'>
+                    {list.title}
+                  </h5>
                   <p className='lg:pr-32'>{list.description}</p>
                 </div>
               ))}

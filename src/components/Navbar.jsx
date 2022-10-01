@@ -67,11 +67,19 @@ const Navbar = () => {
   return (
     <nav className='w-xl mx-auto bg-primary p-3 dark:border-b dark:bg-gray-900'>
       <div className='flex items-center justify-around '>
-        <div className='text-white md:hidden' onClick={handleCLick}>
-          {!nav ? <FaBars /> : <FaTimes />}
+        <div className='-ml-4 text-white md:hidden' onClick={handleCLick}>
+          {!nav ? (
+            <button className='px-6 py-2'>
+              <FaBars />
+            </button>
+          ) : (
+            <button className='px-6 py-2'>
+              <FaTimes />
+            </button>
+          )}
         </div>
-        <div className='' onClick={() => setNav(false)}>
-          <button className=''>
+        <div onClick={() => setNav(false)}>
+          <button className='-ml-6'>
             <Link href='/'>
               <Logo />
             </Link>
