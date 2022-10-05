@@ -10,8 +10,8 @@ const ContactForm = () => {
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
-  const create = async (e) => {
-    e.preventDefault();
+
+  const create = async () => {
     try {
       const body = { name, email, message };
       await fetch('/api/create', {
@@ -23,9 +23,22 @@ const ContactForm = () => {
       throw new Error(error);
     }
   };
-  const onSubmit = async (data) => {
+  
+  const onSubmit = async (e, data) => {
+    e.preventDefault();
     try {
       create(data);
+
+      const formData = {};
+      Array.from(e.currentTarget.elements).forEach((field) => {
+        if (!field.name) return;
+        formData[field.name] = field.value;
+      });
+      fetch('/api/mail', {
+        method: 'post',
+        body: JSON.stringify(formData),
+      });
+
       resetFormFields();
     } catch (error) {
       console.log(error);
