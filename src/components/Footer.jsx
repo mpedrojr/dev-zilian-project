@@ -20,7 +20,7 @@ const Footer = () => {
             </h2>
             <ul className='text-gray-400'>
               <li>
-                <Link href='/blog' className='hover:underline' className='hover:underline'>
+                <Link href='/blog' className='hover:underline'>
                   Blog
                 </Link>
               </li>
@@ -36,11 +36,8 @@ const Footer = () => {
                   href='https://github.com/mpedrojr/dev-zilian-project'
                   rel='noopener noreferrer'
                   className='hover:underline '
-                  target='_blank'
-                  className='hover:underline'>
-                  
-                    Github
-                  
+                  target='_blank'>
+                  Github
                 </Link>
               </li>
               <li>
@@ -48,11 +45,8 @@ const Footer = () => {
                   href='https://www.linkedin.com/in/mpedrocjr/'
                   rel='noopener noreferrer'
                   className='hover:underline'
-                  target='_blank'
-                  className='hover:underline'>
-                  
-                    Linkedin
-                  
+                  target='_blank'>
+                  Linkedin
                 </Link>
               </li>
             </ul>
@@ -63,18 +57,18 @@ const Footer = () => {
             </h2>
             <ul className='text-gray-400'>
               <li className='mb-4'>
-                <Link href='/' className='hover:underline' className='hover:underline'>
+                <Link href='/' className='hover:underline'>
                   Home
                 </Link>
               </li>
 
               <li className='mb-4'>
-                <Link href='/about' className='hover:underline' className='hover:underline'>
+                <Link href='/about' className='hover:underline'>
                   About
                 </Link>
               </li>
               <li className='mb-4'>
-                <Link href='/contact' className='hover:underline' className='hover:underline'>
+                <Link href='/contact' className='hover:underline'>
                   Contact
                 </Link>
               </li>
