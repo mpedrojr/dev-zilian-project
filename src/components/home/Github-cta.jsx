@@ -18,16 +18,16 @@ const RepoCta = () => {
             <Link
               href='https://github.com/mpedrojr/dev-zilian-project'
               rel='noopener noreferrer'
-              alt='Link to the GitHub repository'>
-              <a
-                target='_blank'
-                className='inline-flex items-center rounded-lg bg-gray-200 px-6 py-3 text-gray-900'>
-                <FaGithub className='h-6 w-6' />
-                <span className='ml-4 flex flex-col items-start leading-none'>
-                  {/* <span className='mb-1 text-xs'>GET IT ON</span> */}
-                  <span className='title-font font-semibold'>Click Here</span>
-                </span>
-              </a>
+              alt='Link to the GitHub repository'
+              target='_blank'
+              className='inline-flex items-center rounded-lg bg-gray-200 px-6 py-3 text-gray-900'>
+
+              <FaGithub className='h-6 w-6' />
+              <span className='ml-4 flex flex-col items-start leading-none'>
+                {/* <span className='mb-1 text-xs'>GET IT ON</span> */}
+                <span className='title-font font-semibold'>Click Here</span>
+              </span>
+
             </Link>
           </div>
         </div>

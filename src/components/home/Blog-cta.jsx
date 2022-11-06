@@ -20,11 +20,12 @@ const BlogCta = () => {
                 Web Development
               </span>
               <span className='mt-2 flex justify-center'>
-                <Link href='/blog' alt='Link to the blog home page'>
-                  <a className='inline-flex items-center rounded-lg bg-primary px-6 py-3 text-white'>
-                    <BsNewspaper className='mr-4 h-6 w-6' />
-                    Click here
-                  </a>
+                <Link
+                  href='/blog'
+                  alt='Link to the blog home page'
+                  className='inline-flex items-center rounded-lg bg-primary px-6 py-3 text-white'>
+
+                  <BsNewspaper className='mr-4 h-6 w-6' />Click here
                 </Link>
               </span>
             </div>

@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className='border-t bg-primary p-4 dark:border-t-gray-200 dark:bg-gray-900 sm:p-6'>
       <div className='md:flex md:justify-between'>
         <div className='-ml-8 mb-6 md:ml-2 md:mb-0'>
-          <Link href='/' className='flex items-start'>
+          <Link href='/' className='flex items-start' legacyBehavior>
             <button>
               <Logo />
             </button>
@@ -20,8 +20,8 @@ const Footer = () => {
             </h2>
             <ul className='text-gray-400'>
               <li>
-                <Link href='/blog' className='hover:underline'>
-                  <a className='hover:underline'>Blog</a>
+                <Link href='/blog' className='hover:underline' className='hover:underline'>
+                  Blog
                 </Link>
               </li>
             </ul>
@@ -35,20 +35,24 @@ const Footer = () => {
                 <Link
                   href='https://github.com/mpedrojr/dev-zilian-project'
                   rel='noopener noreferrer'
-                  className='hover:underline '>
-                  <a target='_blank' className='hover:underline'>
+                  className='hover:underline '
+                  target='_blank'
+                  className='hover:underline'>
+                  
                     Github
-                  </a>
+                  
                 </Link>
               </li>
               <li>
                 <Link
                   href='https://www.linkedin.com/in/mpedrocjr/'
                   rel='noopener noreferrer'
+                  className='hover:underline'
+                  target='_blank'
                   className='hover:underline'>
-                  <a target='_blank' className='hover:underline'>
+                  
                     Linkedin
-                  </a>
+                  
                 </Link>
               </li>
             </ul>
@@ -59,19 +63,19 @@ const Footer = () => {
             </h2>
             <ul className='text-gray-400'>
               <li className='mb-4'>
-                <Link href='/' className='hover:underline'>
-                  <a className='hover:underline'>Home</a>
+                <Link href='/' className='hover:underline' className='hover:underline'>
+                  Home
                 </Link>
               </li>
 
               <li className='mb-4'>
-                <Link href='/about' className='hover:underline'>
-                  <a className='hover:underline'>About</a>
+                <Link href='/about' className='hover:underline' className='hover:underline'>
+                  About
                 </Link>
               </li>
               <li className='mb-4'>
-                <Link href='/contact' className='hover:underline'>
-                  <a className='hover:underline'>Contact</a>
+                <Link href='/contact' className='hover:underline' className='hover:underline'>
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -86,21 +90,24 @@ const Footer = () => {
         <div className='mt-4 flex space-x-6 sm:mt-0 sm:justify-center md:mr-12'>
           <Link
             href='#'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
+            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
+            legacyBehavior>
             <button className='text-2xl text-zinc-400'>
               <FaDiscord />
             </button>
           </Link>
           <Link
             href='#'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
+            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
+            legacyBehavior>
             <button className='text-2xl text-zinc-400'>
               <FaFacebook />
             </button>
           </Link>
           <Link
             href='#'
-            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'>
+            className='text-gray-500 hover:text-gray-900 dark:hover:text-white'
+            legacyBehavior>
             <button className='text-2xl text-zinc-400'>
               <FaInstagram />
             </button>

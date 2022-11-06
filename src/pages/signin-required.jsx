@@ -17,10 +17,12 @@ const SignInRequired = () => {
         </h3>
 
         <div className='flex space-x-4'>
-          <Link href='/signin'>
-            <a className='mt-4 flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700 md:text-lg'>
+          <Link
+            href='/signin'
+            className='mt-4 flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700 md:text-lg'>
+            
               Login
-            </a>
+            
           </Link>
         </div>
       </div>

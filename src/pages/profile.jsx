@@ -18,20 +18,26 @@ const Profile = () => {
           </p>
           <hr className='my-6 border-gray-200 sm:mx-auto lg:my-4' />
           <div className='mt-6 flex flex-wrap justify-center gap-4'>
-            <Link href='/'>
-              <a className='block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto'>
+            <Link
+              href='/'
+              className='block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto'>
+              
                 Home
-              </a>
+              
             </Link>
-            <Link href='/about'>
-              <a className='block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto'>
+            <Link
+              href='/about'
+              className='block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto'>
+              
                 About
-              </a>
+              
             </Link>
-            <Link href='/blog'>
-              <a className='block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto'>
+            <Link
+              href='/blog'
+              className='block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto'>
+              
                 Blog
-              </a>
+              
             </Link>
           </div>
           {/* Section 2 */}

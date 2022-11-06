@@ -24,10 +24,12 @@ const Header = () => {
   return (
     <nav className='rounded-lg px-6  py-3'>
       <div className='container mx-auto flex-wrap items-center  justify-between lg:flex'>
-        <Link href='/blog'>
-          <a className='mt-4 mb-4 flex justify-center self-center whitespace-nowrap text-center text-3xl font-bold text-primary dark:text-gray-200 lg:text-4xl '>
+        <Link
+          href='/blog'
+          className='mt-4 mb-4 flex justify-center self-center whitespace-nowrap text-center text-3xl font-bold text-primary dark:text-gray-200 lg:text-4xl '>
+          
             Blog
-          </a>
+          
         </Link>
       </div>
 
@@ -48,7 +50,7 @@ const Header = () => {
           <div className='text-md py-2'>
             <div onClick={closeMenu}>
               {categories.map((category, index) => (
-                <Link key={index} href={`/category/${category.slug}`}>
+                <Link key={index} href={`/category/${category.slug}`} legacyBehavior>
                   <div className='mt-2 cursor-pointer py-2 align-middle'>
                     <p className='text-center font-semibold text-primary dark:text-gray-300'>
                       {category.name}

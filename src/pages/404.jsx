@@ -19,15 +19,19 @@ const PageNotFound = () => {
           Click below to navigate to the home page.
         </p>
         <div className='flex space-x-4'>
-          <Link href='/'>
-            <a className='flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700 md:text-lg'>
+          <Link
+            href='/'
+            className='flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700 md:text-lg'>
+            
               Home
-            </a>
+            
           </Link>
-          <Link href='/blog'>
-            <a className='flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700  md:text-lg'>
+          <Link
+            href='/blog'
+            className='flex h-10 w-24 items-center justify-center rounded-full bg-primary text-base font-medium text-white dark:bg-amber-700  md:text-lg'>
+            
               Blog
-            </a>
+            
           </Link>
         </div>
       </div>

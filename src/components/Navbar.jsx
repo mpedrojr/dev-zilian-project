@@ -80,23 +80,23 @@ const Navbar = () => {
         </div>
         <div onClick={() => setNav(false)}>
           <button className='-ml-6'>
-            <Link href='/'>
+            <Link href='/' legacyBehavior>
               <Logo />
             </Link>
           </button>
         </div>
         <div className='hidden space-x-10 font-secondary font-semibold text-white  md:flex lg:mr-2'>
           <Link href='/'>
-            <a>HOME</a>
+            HOME
           </Link>
           <Link href='/about'>
-            <a>ABOUT</a>
+            ABOUT
           </Link>
           <Link href='/contact'>
-            <a>CONTACT</a>
+            CONTACT
           </Link>
           <Link href='/blog'>
-            <a>BLOG</a>
+            BLOG
           </Link>
         </div>
         <div className='flex md:hidden'>{renderThemeChanger()}</div>
@@ -114,7 +114,7 @@ const Navbar = () => {
             </button>
           ) : (
             <div>
-              <Link href='/signin'>
+              <Link href='/signin' legacyBehavior>
                 <button className=' flex items-center font-bold text-white'>
                   <span className='mr-4 hidden lg:inline'>LOGIN</span>
                   <span className='inline'>
@@ -146,7 +146,7 @@ const Navbar = () => {
               </button>
             ) : (
               <div>
-                <Link href='/signin'>
+                <Link href='/signin' legacyBehavior>
                   <button
                     onClick={() => setNav(false)}
                     className=' flex items-center font-bold text-gray-900 dark:text-gray-100'>
@@ -161,28 +161,28 @@ const Navbar = () => {
           </div>
 
           <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
-            <Link href='/'>
+            <Link href='/' legacyBehavior>
               <button onClick={handleClick} className='w-full'>
                 HOME
               </button>
             </Link>
           </div>
           <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
-            <Link href='/about'>
+            <Link href='/about' legacyBehavior>
               <button onClick={handleClick} className='w-full'>
                 ABOUT
               </button>
             </Link>
           </div>
           <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
-            <Link href='/contact'>
+            <Link href='/contact' legacyBehavior>
               <button onClick={handleClick} className='w-full'>
                 CONTACT
               </button>
             </Link>
           </div>
           <div className='w-80 border-b-2 border-b-primary text-center leading-10 dark:border-b-gray-200'>
-            <Link href='/blog'>
+            <Link href='/blog' legacyBehavior>
               <button onClick={handleClick} className='w-full'>
                 BLOG
               </button>
