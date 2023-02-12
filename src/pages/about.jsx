@@ -17,37 +17,40 @@ const About = () => {
 
   return (
     <section className='bg-slate-100 dark:bg-gray-900'>
-      <div className='mx-auto max-w-screen-xl px-4 pt-8 text-center lg:px-6 lg:pt-16'>
-        <div className='mx-auto mb-8 max-w-screen-sm lg:mb-8'>
-          <h2 className='mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-gray-200'>
-            Hi There!
-          </h2>
-          <p className='font-light text-gray-900 dark:text-gray-200 sm:text-xl'>
-            I&apos;m a front-end web developer with a passion for building web
-            applications.
-          </p>
-        </div>
-        <div>
-          <div className='text-center text-gray-900 dark:text-gray-200'>
-            <div className='mx-auto mb-4 h-32 w-32'>
-              <Image
-                className='mx-auto  rounded-full'
-                src={MyPhoto}
-                alt='Pedro Avatar'
-              />
-            </div>
+      <div className='container mx-auto'>
+        <div className='px-4 pt-8 text-center lg:px-6 lg:pt-16'>
+          <div className='mx-auto p-4 text-center md:px-10 lg:px-32 xl:max-w-5xl'>
+            <h2 className='text-2xl  font-bold leading-none sm:text-4xl'>
+              Hi There!
+            </h2>
+            <p className='my-2 mb-4 px-1 text-lg'>
+              Welcome to my about page. Here you will get to know a little more
+              about me.
+            </p>
+          </div>
 
-            <h3 className='mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200'>
-              <a href='#'>Pedro da C Jr.</a>
-            </h3>
-            <p>Web Developer</p>
-            <ul className='mt-4 flex justify-center space-x-4'>
-              <li>
-                <a
-                  href='#'
-                  className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'></a>
-              </li>
-            </ul>
+          <div>
+            <div className='text-center text-gray-900 dark:text-gray-200'>
+              <div className='mx-auto mb-4 h-32 w-32'>
+                <Image
+                  className='mx-auto  rounded-full'
+                  src={MyPhoto}
+                  alt='Pedro Avatar'
+                />
+              </div>
+
+              <h3 className='mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-200'>
+                <a href='#'>Pedro da C Jr.</a>
+              </h3>
+              <p>Web Developer</p>
+              <ul className='mt-4 flex justify-center space-x-4'>
+                <li>
+                  <a
+                    href='#'
+                    className='text-[#39569c] hover:text-gray-900 dark:hover:text-white'></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -56,15 +59,42 @@ const About = () => {
 
       <div className='py-2 pb-16 text-gray-900 dark:text-gray-200'>
         <div className='container mx-auto'>
-          <div className='mx-auto p-4 text-center md:px-10 lg:px-32 xl:max-w-5xl'>
-            <h2 className='text-2xl  font-bold leading-none sm:text-4xl'>
-              My Experience and certificates
+          <div className='mx-auto p-4 px-1 text-center md:px-10 lg:px-32 xl:max-w-5xl'>
+            <h2 className='mb-4 text-2xl font-bold leading-none sm:text-4xl'>
+              About Me
             </h2>
-            <p className='my-4 mb-12 px-8 text-lg'>
-              Here you can find a little more about my learning path.
+            <p className='my-2 mb-4 px-8  text-lg'>
+              Welcome to my portfolio website! I&apos;m a beginner web developer
+              with a passion for coding and creating beautiful and functional
+              websites. I have a strong foundation in various programming
+              languages and technologies, including React Js, JavaScript,
+              MongoDB, CSS, Prisma, Next.js and Headless CMS.
             </p>
-            <h2 className='text-xl font-bold leading-none sm:text-4xl'>
-              Bootcamp
+            <p className='my-2 mb-4 px-8 text-lg'>
+              My journey in web development started a little over a year ago,
+              and since then, I have been continuously learning and perfecting
+              my skills. I believe that the world of technology is constantly
+              evolving, and I want to be at the forefront of these advancements.
+              That&apos;s why I am always seeking new opportunities to challenge
+              myself and expand my knowledge.
+            </p>
+            <p className='my-2 mb-4 px-8 text-lg'>
+              I am confident in my ability to create dynamic and engaging
+              websites that will help businesses and individuals reach their
+              online goals. I have experience working with a variety of
+              projects, ranging from simple personal blogs to complex e-commerce
+              sites.
+            </p>
+            <p className='my-2 mb-4 px-8 text-lg'>
+              As a beginner, I am always open to constructive feedback and new
+              opportunities to grow. I am eager to work with like-minded
+              individuals who share my passion for web development and
+              technology. If you are interested in working with me, please
+              don&apos;t hesitate to reach out.
+            </p>
+
+            <h2 className='text-2xl font-bold leading-none sm:text-4xl'>
+              Experience
             </h2>
             <p className='my-4 px-8 text-lg'>
               I graduated in Full Stack Web Development at Nucamp. This Bootcamp
